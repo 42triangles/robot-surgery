@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpaxlkqtm7uq5"]
+[gd_scene load_steps=4 format=3 uid="uid://dpaxlkqtm7uq5"]
 
 [ext_resource type="Texture2D" uid="uid://jnsrnrmpbg2i" path="res://icon.svg" id="1_26d5y"]
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player.tscn" id="1_yixew"]
-[ext_resource type="Script" path="res://scripts/scale_0_environment.gd" id="3_ioid2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0l1vs"]
 
@@ -16,8 +15,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="Environment" type="AnimatableBody2D" parent="."]
-position = Vector2(-1, 0)
-script = ExtResource("3_ioid2")
+sync_to_physics = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment"]
 position = Vector2(0, 280)

@@ -15,13 +15,16 @@ position = Vector2(0, -80)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("/root/World/Scale0Container/Scale0Viewport/Scale0/Environment")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Environment" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment"]
 position = Vector2(0, 159)
 shape = SubResource("WorldBoundaryShape2D_hg254")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Environment/CollisionShape2D"]
 position = Vector2(-2, 0)
 texture = ExtResource("2_xauh6")
 centered = false
