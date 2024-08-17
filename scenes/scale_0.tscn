@@ -1,13 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpaxlkqtm7uq5"]
+[gd_scene load_steps=6 format=3 uid="uid://dpaxlkqtm7uq5"]
 
 [ext_resource type="Texture2D" uid="uid://jnsrnrmpbg2i" path="res://icon.svg" id="1_26d5y"]
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player.tscn" id="1_yixew"]
+[ext_resource type="Texture2D" uid="uid://dp3hnxoycgdvx" path="res://sprites/eyeball.png" id="2_237qy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exewt"]
+size = Vector2(148, 162)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0l1vs"]
 
 [node name="Scale0" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_yixew")]
+
+[node name="CollisionShape2D" parent="Player" index="0"]
+shape = SubResource("RectangleShape2D_exewt")
+
+[node name="Sprite2D" parent="Player" index="1"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_237qy")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -80)
@@ -25,3 +36,5 @@ shape = SubResource("WorldBoundaryShape2D_0l1vs")
 texture = ExtResource("1_26d5y")
 centered = false
 offset = Vector2(-64, 0)
+
+[editable path="Player"]
