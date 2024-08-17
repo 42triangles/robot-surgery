@@ -6,17 +6,17 @@ extends CharacterBody2D
 
 var movement: float
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	velocity += get_gravity()
 	
 	var speed_x = abs(velocity.x)
 	if is_on_floor():
-		speed_x -= friction
+		speed_x -= friction * (delta * 60)
 	speed_x = clamp(speed_x, 0, max_speed)
 	
 	velocity.x = speed_x * sign(velocity.x)
 	
-	velocity.x += movement * movement_scale
+	velocity.x += movement * movement_scale * (delta * 60)
 	
 	move_and_slide()
 

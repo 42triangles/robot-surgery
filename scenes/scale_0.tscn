@@ -10,6 +10,11 @@
 
 [node name="Player" parent="." instance=ExtResource("1_yixew")]
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -80)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
 [node name="Environment" type="AnimatableBody2D" parent="."]
 position = Vector2(-1, 0)
 script = ExtResource("3_ioid2")
@@ -22,5 +27,3 @@ shape = SubResource("WorldBoundaryShape2D_0l1vs")
 texture = ExtResource("1_26d5y")
 centered = false
 offset = Vector2(-64, 0)
-
-[node name="Camera2D" type="Camera2D" parent="."]
