@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="robot-surgery"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[physics]
+
+2d/default_gravity=98.0
 
 [rendering]
 
