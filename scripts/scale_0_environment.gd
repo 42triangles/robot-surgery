@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	position += Vector2(1, -0.5)
+	position += Vector2(2, -1)

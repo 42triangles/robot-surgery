@@ -1,25 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpaxlkqtm7uq5"]
+[gd_scene load_steps=5 format=3 uid="uid://dpaxlkqtm7uq5"]
 
 [ext_resource type="Texture2D" uid="uid://jnsrnrmpbg2i" path="res://icon.svg" id="1_26d5y"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_cls04"]
+[ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player.tscn" id="1_yixew"]
 [ext_resource type="Script" path="res://scripts/scale_0_environment.gd" id="3_ioid2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqqu8"]
-size = Vector2(128, 128)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0l1vs"]
 
-[node name="Scale0" type="Node2D"]
+[node name="Scale0" type="SubViewport"]
+transparent_bg = true
+size = Vector2i(1152, 648)
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(1, -1)
-script = ExtResource("1_cls04")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_eqqu8")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("1_26d5y")
+[node name="Player" parent="." instance=ExtResource("1_yixew")]
 
 [node name="Environment" type="AnimatableBody2D" parent="."]
 position = Vector2(-1, 0)
