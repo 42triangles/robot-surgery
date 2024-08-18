@@ -7,9 +7,6 @@ extends CharacterBody2D
 
 var movement: float
 
-func _ready() -> void:
-	set_process_unhandled_input(false)
-
 func _process(delta: float) -> void:
 	velocity += get_gravity()
 	
