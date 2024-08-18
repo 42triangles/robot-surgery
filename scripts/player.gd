@@ -39,3 +39,4 @@ func _on_scale_layer_focused() -> void:
 
 func _on_scale_layer_unfocused() -> void:
 	set_process_unhandled_input(false)
+	movement = 0
