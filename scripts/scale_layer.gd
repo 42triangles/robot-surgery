@@ -5,8 +5,8 @@ signal unfocused
 
 func focus(scale_increasing: bool) -> void:
 	focused.emit()
-	show()
+	$"../..".fade(true, scale_increasing)
 	
 func unfocus(scale_increasing: bool) -> void:
 	unfocused.emit()
-	hide()
+	$"../..".fade(false, scale_increasing)

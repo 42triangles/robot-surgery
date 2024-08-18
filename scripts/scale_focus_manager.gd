@@ -12,9 +12,7 @@ var current_focus: int = 1:
 
 func _ready() -> void:
 	for scale_layer in scale_layers:
-		scale_layer.hide()
 		scale_layer.unfocused.emit()
-	scale_layers[current_focus].show()
 	scale_layers[current_focus].focused.emit()
 
 func toggle_focus() -> void:
