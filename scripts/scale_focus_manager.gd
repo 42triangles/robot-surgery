@@ -2,6 +2,7 @@ extends Node
 
 @export var scale_layers: Array[ScaleLayer] = []
 @export var scale_containers: Array[ScaleContainer] = []
+@export var mini_views: Array[MiniView] = []
 
 var current_focus: int = 1:
 	set(new_value):
@@ -10,11 +11,13 @@ var current_focus: int = 1:
 			
 			scale_layers[current_focus].unfocused.emit()
 			scale_containers[current_focus].fade(false, scale_increasing)
+			mini_views[current_focus].fade(true)
 			
 			current_focus = new_value
 			
 			scale_layers[current_focus].focused.emit()
 			scale_containers[current_focus].fade(true, scale_increasing)
+			mini_views[current_focus].fade(false)
 
 func _ready() -> void:
 	for scale_layer in scale_layers.slice(0, current_focus):
