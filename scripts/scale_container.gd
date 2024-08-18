@@ -14,17 +14,17 @@ func fade(fade_in: bool, scale_increasing: bool) -> void:
 		target_modulate = Color.WHITE
 		target_scale = Vector2.ONE
 		if scale_increasing:
-			scale = Vector2.ZERO
-		else:
 			scale = large_scale
+		else:
+			scale = Vector2.ZERO
 	else:
 		modulate = Color.WHITE
 		target_modulate = Color.TRANSPARENT
 		scale = Vector2.ONE
 		if scale_increasing:
-			target_scale = large_scale
-		else:
 			target_scale = Vector2.ZERO
+		else:
+			target_scale = large_scale
 	
 	if is_instance_valid(tween):
 		tween.stop()
