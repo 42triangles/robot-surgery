@@ -14,6 +14,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch = true
 
 [node name="Scale0Viewport" type="SubViewport" parent="Scale0Container"]
 transparent_bg = true
@@ -32,6 +33,7 @@ offset_right = 1151.0
 offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch = true
 
 [node name="Scale1Viewport" type="SubViewport" parent="Scale1Container"]
 transparent_bg = true
