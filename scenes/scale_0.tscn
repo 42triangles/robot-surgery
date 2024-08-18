@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_2i8hn"]
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player.tscn" id="1_yixew"]
-[ext_resource type="Texture2D" uid="uid://dp3hnxoycgdvx" path="res://sprites/eyeball.png" id="2_237qy"]
+[ext_resource type="Texture2D" uid="uid://vful8cwvuklw" path="res://sprites/WADL.png" id="4_pthfx"]
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="4_11ug5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_exewt"]
-size = Vector2(148, 162)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1e21"]
+size = Vector2(170, 170)
 
 [node name="Scale0" type="Node2D"]
 script = ExtResource("1_2i8hn")
@@ -15,11 +15,11 @@ script = ExtResource("1_2i8hn")
 position = Vector2(0, -164)
 
 [node name="CollisionShape2D" parent="Player" index="0"]
-shape = SubResource("RectangleShape2D_exewt")
+shape = SubResource("RectangleShape2D_k1e21")
 
 [node name="Sprite2D" parent="Player" index="1"]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_237qy")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_pthfx")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -80)
