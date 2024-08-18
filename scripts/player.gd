@@ -11,14 +11,16 @@ var movement: float
 func _process(delta: float) -> void:
 	velocity += get_gravity()
 	
+	velocity.x += movement * movement_scale * (delta * 60)
+	
 	var speed_x = abs(velocity.x)
-	if is_on_floor():
+	if is_on_floor() and abs(movement) < 0.01:
 		speed_x -= friction * (delta * 60)
 	speed_x = clamp(speed_x, 0, max_speed)
 	
 	velocity.x = speed_x * sign(velocity.x)
 	
-	velocity.x += movement * movement_scale * (delta * 60)
+	rotation_degrees = velocity.x / max_speed * move_tip
 	
 	move_and_slide()
 
