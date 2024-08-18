@@ -1,12 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://dhmrdr8obqljr"]
+[gd_scene load_steps=7 format=4 uid="uid://dhmrdr8obqljr"]
 
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player.tscn" id="1_2of5g"]
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_ed270"]
-[ext_resource type="Texture2D" uid="uid://vful8cwvuklw" path="res://sprites/WADL.png" id="2_ibsn0"]
 [ext_resource type="Texture2D" uid="uid://jnsrnrmpbg2i" path="res://icon.svg" id="2_xauh6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_05725"]
-size = Vector2(170, 170)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wgl4q"]
 
@@ -28,13 +24,6 @@ script = ExtResource("1_ed270")
 [node name="Player" parent="." instance=ExtResource("1_2of5g")]
 position = Vector2(0, -100)
 
-[node name="CollisionShape2D" parent="Player" index="0"]
-shape = SubResource("RectangleShape2D_05725")
-
-[node name="Sprite2D" parent="Player" index="1"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_ibsn0")
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -80)
 position_smoothing_enabled = true
@@ -51,5 +40,3 @@ tile_set = SubResource("TileSet_clbtq")
 
 [connection signal="focused" from="." to="Player" method="_on_scale_layer_focused"]
 [connection signal="unfocused" from="." to="Player" method="_on_scale_layer_unfocused"]
-
-[editable path="Player"]
