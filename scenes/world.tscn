@@ -16,7 +16,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(576, 324)
+pivot_offset = Vector2(576, 444)
 stretch = true
 script = ExtResource("1_b80ir")
 
@@ -37,7 +37,7 @@ offset_right = 1151.0
 offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(576, 324)
+pivot_offset = Vector2(576, 444)
 stretch = true
 script = ExtResource("1_b80ir")
 
