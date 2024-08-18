@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://dhmrdr8obqljr"]
+[gd_scene load_steps=8 format=4 uid="uid://dhmrdr8obqljr"]
 
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player.tscn" id="1_2of5g"]
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_ed270"]
 [ext_resource type="Texture2D" uid="uid://bhky34uvgy0vl" path="res://sprites/environment/Cool-environment.png" id="2_3230d"]
-[ext_resource type="Texture2D" uid="uid://jnsrnrmpbg2i" path="res://icon.svg" id="2_xauh6"]
 [ext_resource type="Script" path="res://scripts/custom_remote_transform_2d.gd" id="4_8tmn4"]
+[ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="5_ofejn"]
 
 [sub_resource type="Gradient" id="Gradient_exr7v"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -16,20 +16,6 @@ height = 256
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wgl4q"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28c5e"]
-texture = ExtResource("2_xauh6")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-
-[sub_resource type="TileSet" id="TileSet_clbtq"]
-tile_size = Vector2i(128, 128)
-physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_wgl4q")
-sources/1 = SubResource("TileSetAtlasSource_28c5e")
 
 [node name="Scale1" type="Node2D"]
 script = ExtResource("1_ed270")
@@ -59,10 +45,11 @@ texture = SubResource("GradientTexture2D_nadfp")
 texture_scale = 8.0
 
 [node name="Environment" type="Node2D" parent="."]
+modulate = Color(0.716564, 0.864575, 0.867643, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Environment"]
-tile_map_data = PackedByteArray("AAD9/wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD//wAAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAA=")
-tile_set = SubResource("TileSet_clbtq")
+tile_map_data = PackedByteArray("AAD8/wEAAwAAAAAAAAD8/wIAAwAAAAEAAAD8/wMAAwAAAAIAAAD9/wEAAwABAAAAAAD9/wIAAwABAAEAAAD9/wMAAwABAAIAAAD+/wEAAwACAAAAAAD+/wIAAwACAAEAAAD+/wMAAwACAAIAAAD//wEAAwAAAAAAAAD//wIAAwAAAAEAAAD//wMAAwAAAAIAAAAAAAEAAwABAAAAAAAAAAIAAwABAAEAAAAAAAMAAwABAAIAAAABAAEAAwACAAAAAAABAAIAAwACAAEAAAABAAMAAwACAAIAAAACAAEAAwAAAAAAAAACAAIAAwAAAAEAAAACAAMAAwAAAAIAAAADAAEAAwABAAAAAAADAAIAAwABAAEAAAADAAMAAwABAAIAAAAEAAEAAwACAAAAAAAEAAIAAwACAAEAAAAEAAMAAwACAAIAAAA=")
+tile_set = ExtResource("5_ofejn")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.188969, 0.188969, 0.188969, 1)
