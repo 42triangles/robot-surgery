@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player.tscn" id="1_2of5g"]
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_ed270"]
 [ext_resource type="Texture2D" uid="uid://jnsrnrmpbg2i" path="res://icon.svg" id="2_xauh6"]
-[ext_resource type="Script" path="res://scenes/custom_remote_transform_2d.gd" id="4_8tmn4"]
+[ext_resource type="Script" path="res://scripts/custom_remote_transform_2d.gd" id="4_8tmn4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wgl4q"]
 
