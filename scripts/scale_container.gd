@@ -5,10 +5,11 @@ extends SubViewportContainer
 @export var large_scale: Vector2 = Vector2(4, 4)
 
 var tween: Tween
-var target_modulate: Color
-var target_scale: Vector2
 
-func start(fade_in: bool, scale_increasing: bool) -> void:
+func fade(fade_in: bool, scale_increasing: bool) -> void:
+	var target_modulate: Color
+	var target_scale: Vector2
+
 	if fade_in:
 		modulate = Color.TRANSPARENT
 		target_modulate = Color.WHITE
@@ -25,9 +26,6 @@ func start(fade_in: bool, scale_increasing: bool) -> void:
 			target_scale = Vector2.ZERO
 		else:
 			target_scale = large_scale
-
-func fade(fade_in: bool, scale_increasing: bool) -> void:
-	start(fade_in, scale_increasing)
 	
 	if is_instance_valid(tween):
 		tween.stop()

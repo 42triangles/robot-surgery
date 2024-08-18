@@ -26,7 +26,7 @@ func _ready() -> void:
 		if index == current_focus:
 			continue
 		scale_layers[index].unfocused.emit()
-		scale_containers[index].start(true, true)
+		scale_containers[index].modulate = Color.TRANSPARENT
 
 func toggle_focus() -> void:
 	if current_focus == 0:
