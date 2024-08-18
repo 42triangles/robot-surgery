@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://dpaxlkqtm7uq5"]
+[gd_scene load_steps=9 format=4 uid="uid://dpaxlkqtm7uq5"]
 
+[ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_2i8hn"]
 [ext_resource type="Texture2D" uid="uid://jnsrnrmpbg2i" path="res://icon.svg" id="1_26d5y"]
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player.tscn" id="1_yixew"]
 [ext_resource type="Texture2D" uid="uid://dp3hnxoycgdvx" path="res://sprites/eyeball.png" id="2_237qy"]
@@ -22,6 +23,7 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_00grh")
 sources/0 = SubResource("TileSetAtlasSource_8hsxn")
 
 [node name="Scale0" type="Node2D"]
+script = ExtResource("1_2i8hn")
 
 [node name="Player" parent="." instance=ExtResource("1_yixew")]
 
@@ -43,5 +45,8 @@ position_smoothing_speed = 10.0
 tile_map_data = PackedByteArray("AAD7/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_sglnh")
 use_kinematic_bodies = true
+
+[connection signal="focused" from="." to="Player" method="_on_scale_layer_focused"]
+[connection signal="unfocused" from="." to="Player" method="_on_scale_layer_unfocused"]
 
 [editable path="Player"]

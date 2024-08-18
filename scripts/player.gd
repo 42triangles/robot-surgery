@@ -7,6 +7,9 @@ extends CharacterBody2D
 
 var movement: float
 
+func _ready() -> void:
+	set_process_unhandled_input(false)
+
 func _process(delta: float) -> void:
 	velocity += get_gravity()
 	
@@ -30,3 +33,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		if is_on_floor():
 			velocity.y = -1 * jump_power
 		get_viewport().set_input_as_handled()
+
+func _on_scale_layer_focused() -> void:
+	set_process_unhandled_input(true)
+
+func _on_scale_layer_unfocused() -> void:
+	set_process_unhandled_input(false)
