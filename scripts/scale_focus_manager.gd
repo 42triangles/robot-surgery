@@ -20,15 +20,13 @@ var current_focus: int = 1:
 			mini_views[current_focus].fade(false)
 
 func _ready() -> void:
-	for scale_layer in scale_layers.slice(0, current_focus):
-		scale_layer.unfocused.emit()
-	for scale_container in scale_containers.slice(0, current_focus):
-		scale_container.start(true, false)
-	scale_layers[current_focus].focused.emit()
-	for scale_layer in scale_layers.slice(current_focus + 1):
-		scale_layer.unfocused.emit()
-	for scale_container in scale_containers.slice(current_focus + 1):
-		scale_container.start(true, true)
+	assert(scale_layers.size() == scale_containers.size())
+	assert(scale_layers.size() == mini_views.size())
+	for index in range(scale_layers.size()):
+		if index == current_focus:
+			continue
+		scale_layers[index].unfocused.emit()
+		scale_containers[index].start(true, true)
 
 func toggle_focus() -> void:
 	if current_focus == 0:
