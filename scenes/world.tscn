@@ -49,6 +49,7 @@ render_target_update_mode = 4
 
 [node name="Scale1" parent="Scale1Container/Scale1Viewport" instance=ExtResource("2_aooe1")]
 
-[node name="ScaleFocusManager" type="Node" parent="." node_paths=PackedStringArray("scale_layers")]
+[node name="ScaleFocusManager" type="Node" parent="." node_paths=PackedStringArray("scale_layers", "scale_containers")]
 script = ExtResource("3_r3dc3")
 scale_layers = [NodePath("../Scale0Container/Scale0Viewport/Scale0"), NodePath("../Scale1Container/Scale1Viewport/Scale1")]
+scale_containers = [NodePath("../Scale0Container"), NodePath("../Scale1Container")]
