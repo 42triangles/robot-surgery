@@ -1,0 +1,37 @@
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://dclyj7bjtpoa3"]
+
+[ext_resource type="Texture2D" uid="uid://chkjm3vadf5pa" path="res://sprites/environment/block_01.png" id="1_7fmpp"]
+[ext_resource type="Texture2D" uid="uid://c33enlwn45tqh" path="res://sprites/environment/block_02.png" id="2_qs1lp"]
+[ext_resource type="Texture2D" uid="uid://royoy0nyfih" path="res://sprites/environment/block_03.png" id="3_ocujv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ju456"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fyfu"]
+texture = ExtResource("1_7fmpp")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-150, -150, 150, -150, 150, 150, -150, 150)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6hxf"]
+texture = ExtResource("2_qs1lp")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-150, -150, 150, -150, 150, 150, -150, 150)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-150, -150, 150, -150, 150, 150, -150, 150)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-150, -150, 150, -150, 150, 150, -150, 150)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08bhv"]
+texture = ExtResource("3_ocujv")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-150, -150, 150, -150, 150, 150, -150, 150)
+
+[resource]
+tile_size = Vector2i(300, 300)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_ju456")
+sources/3 = SubResource("TileSetAtlasSource_1fyfu")
+sources/4 = SubResource("TileSetAtlasSource_s6hxf")
+sources/5 = SubResource("TileSetAtlasSource_08bhv")
