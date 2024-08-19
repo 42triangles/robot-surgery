@@ -34,9 +34,5 @@ func _unhandled_input(event: InputEvent) -> void:
 			velocity.y = -1 * jump_power
 		get_viewport().set_input_as_handled()
 
-func _on_scale_layer_focused() -> void:
-	set_process_unhandled_input(true)
-
 func _on_scale_layer_unfocused() -> void:
-	set_process_unhandled_input(false)
 	movement = 0
