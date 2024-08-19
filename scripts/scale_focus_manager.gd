@@ -1,5 +1,7 @@
 extends Node
 
+signal focusing(index: int)
+
 @export var scale_layers: Array[ScaleLayer] = []
 @export var scale_containers: Array[ScaleContainer] = []
 @export var mini_views: Array[MiniView] = []
@@ -18,6 +20,8 @@ var current_focus: int = 1:
 			scale_layers[current_focus].focused.emit()
 			scale_containers[current_focus].fade(true, scale_increasing)
 			mini_views[current_focus].fade(false)
+			
+			focusing.emit(current_focus)
 
 func _ready() -> void:
 	assert(scale_layers.size() == scale_containers.size())
