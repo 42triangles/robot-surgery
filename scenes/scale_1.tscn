@@ -45,6 +45,7 @@ position_smoothing_speed = 10.0
 [node name="CustomRemoteTransform2D" type="Node2D" parent="Player"]
 position = Vector2(0, -9)
 script = ExtResource("4_8tmn4")
+target_path = NodePath("/root/World/Scale0Container/Scale0Viewport/Scale0/Environment")
 relative_scale = 3.0
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]

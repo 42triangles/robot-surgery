@@ -1,8 +1,9 @@
 extends Node2D
 
+@export var target_path: NodePath
 @export var relative_scale: float = 1
 
-@onready var target: Node2D = $"/root/World/Scale0Container/Scale0Viewport/Scale0/Environment"
+@onready var target: Node2D = get_node(target_path)
 
 var offset: Vector2
 
