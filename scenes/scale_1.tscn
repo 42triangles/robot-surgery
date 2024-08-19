@@ -36,7 +36,6 @@ tile_set = ExtResource("5_ofejn")
 
 [node name="Launchpad" parent="Environment" instance=ExtResource("4_vi157")]
 position = Vector2(343, 52)
-velocity = Vector2(0, -3000)
 
 [node name="Player" parent="." groups=["players"] instance=ExtResource("1_2of5g")]
 position = Vector2(0, -62)
