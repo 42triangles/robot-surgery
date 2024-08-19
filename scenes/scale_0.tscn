@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://dpaxlkqtm7uq5"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_2i8hn"]
-[ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player.tscn" id="1_yixew"]
+[ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player_wadl.tscn" id="1_yixew"]
 [ext_resource type="Texture2D" uid="uid://bamoerh7lero7" path="res://sprites/environment/Wires-ambience.png" id="2_w7e8f"]
 [ext_resource type="PackedScene" uid="uid://cqq1uhv7kjtcx" path="res://scenes/lever.tscn" id="4_1ii6s"]
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="4_11ug5"]
@@ -39,19 +39,19 @@ use_kinematic_bodies = true
 position = Vector2(347, -41)
 signal_name = &"lever_1"
 
-[node name="Player" parent="." groups=["players"] instance=ExtResource("1_yixew")]
+[node name="WADL" parent="." instance=ExtResource("1_yixew")]
 position = Vector2(0, -164)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="WADL"]
 position = Vector2(0, -80)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="PointLight2D" type="PointLight2D" parent="Player"]
+[node name="PointLight2D" type="PointLight2D" parent="WADL"]
 texture = SubResource("GradientTexture2D_btg2d")
 texture_scale = 8.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
-[connection signal="unfocused" from="." to="Player" method="_on_scale_layer_unfocused"]
+[connection signal="unfocused" from="." to="WADL" method="_on_scale_layer_unfocused"]
