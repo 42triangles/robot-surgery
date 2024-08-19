@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://hbpgw80ffdmr"]
+[gd_scene load_steps=145 format=3 uid="uid://hbpgw80ffdmr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tv6h6"]
 [ext_resource type="Texture2D" uid="uid://dgvsa2b5r7t77" path="res://sprites/wadl/walk/Wadl_v4.0000.png" id="2_bxmv6"]
@@ -135,6 +135,11 @@
 [ext_resource type="Texture2D" uid="uid://dke41xl83xsyq" path="res://sprites/wadl/walk/Wadl_v4.0038.png" id="133_k8bxq"]
 [ext_resource type="Texture2D" uid="uid://bomowj7asyghe" path="res://sprites/wadl/walk/Wadl_v4.0039.png" id="134_5qme7"]
 [ext_resource type="Texture2D" uid="uid://vubfqtrq7aqg" path="res://sprites/wadl/walk/Wadl_v4.0040.png" id="135_dskw8"]
+[ext_resource type="Script" path="res://scripts/wadl_sprite.gd" id="136_gwyyq"]
+[ext_resource type="AudioStream" uid="uid://dgehwqr4x67i1" path="res://audio/sfx/wadl_walk_1.wav" id="136_snql3"]
+[ext_resource type="AudioStream" uid="uid://cgl4qgnceqstj" path="res://audio/sfx/wadl_walk_2.wav" id="137_k36uq"]
+[ext_resource type="AudioStream" uid="uid://4pb6y21qaq8y" path="res://audio/sfx/wadl_walk_3.wav" id="138_4yqac"]
+[ext_resource type="AudioStream" uid="uid://b0exqryh61g1u" path="res://audio/sfx/wadl_walk_4.wav" id="139_wx8ui"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvp8o"]
 animations = [{
@@ -569,6 +574,13 @@ animations = [{
 "speed": 60.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p6hvb"]
+streams_count = 4
+stream_0/stream = ExtResource("136_snql3")
+stream_1/stream = ExtResource("137_k36uq")
+stream_2/stream = ExtResource("138_4yqac")
+stream_3/stream = ExtResource("139_wx8ui")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slchu"]
 size = Vector2(95, 117)
 
@@ -582,10 +594,14 @@ script = ExtResource("1_tv6h6")
 position = Vector2(0, 18)
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_kvp8o")
-animation = &"jump"
+animation = &"walk"
 autoplay = "walk"
-frame = 30
-frame_progress = 1.0
+script = ExtResource("136_gwyyq")
+walk_sfx_frames = Array[int]([1, 20])
+
+[node name="StepsAudio" type="AudioStreamPlayer" parent="AnimatedSprite2D"]
+stream = SubResource("AudioStreamRandomizer_p6hvb")
+volume_db = -32.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-16.5, 41.5)
