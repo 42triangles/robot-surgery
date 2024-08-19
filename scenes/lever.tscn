@@ -1,18 +1,150 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqq1uhv7kjtcx"]
+[gd_scene load_steps=35 format=3 uid="uid://cqq1uhv7kjtcx"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_interactible.gd" id="1_f8hny"]
-[ext_resource type="Texture2D" uid="uid://b043u2wgkwact" path="res://sprites/environment/Lever-or-such.png" id="2_jetau"]
+[ext_resource type="Texture2D" uid="uid://u1goimdc1b5e" path="res://sprites/lever/lever_angle_200px/lever_angle.0000.png" id="3_35s6j"]
+[ext_resource type="Texture2D" uid="uid://ftp0b7jsvxl2" path="res://sprites/lever/lever_angle_200px/lever_angle.0001.png" id="4_k73y6"]
+[ext_resource type="Texture2D" uid="uid://vny8ce8ko0j1" path="res://sprites/lever/lever_angle_200px/lever_angle.0002.png" id="5_mlmvp"]
+[ext_resource type="Texture2D" uid="uid://n8okklrrikex" path="res://sprites/lever/lever_angle_200px/lever_angle.0003.png" id="6_1q24d"]
+[ext_resource type="Texture2D" uid="uid://bbugrb57away3" path="res://sprites/lever/lever_angle_200px/lever_angle.0004.png" id="7_eh7ai"]
+[ext_resource type="Texture2D" uid="uid://c7ai5s7k1fje7" path="res://sprites/lever/lever_angle_200px/lever_angle.0005.png" id="8_8qg01"]
+[ext_resource type="Texture2D" uid="uid://bwxtm0fbpjffn" path="res://sprites/lever/lever_angle_200px/lever_angle.0006.png" id="9_db102"]
+[ext_resource type="Texture2D" uid="uid://da3yywi0aidg2" path="res://sprites/lever/lever_angle_200px/lever_angle.0007.png" id="10_d1s40"]
+[ext_resource type="Texture2D" uid="uid://6jkmdhu2grtc" path="res://sprites/lever/lever_angle_200px/lever_angle.0008.png" id="11_x34qw"]
+[ext_resource type="Texture2D" uid="uid://dacf5re72bm0v" path="res://sprites/lever/lever_angle_200px/lever_angle.0009.png" id="12_efeel"]
+[ext_resource type="Texture2D" uid="uid://dmw2fqwtqm2ft" path="res://sprites/lever/lever_angle_200px/lever_angle.0010.png" id="13_iruqr"]
+[ext_resource type="Texture2D" uid="uid://dgl7wccn47cmv" path="res://sprites/lever/lever_angle_200px/lever_angle.0011.png" id="14_i2re6"]
+[ext_resource type="Texture2D" uid="uid://cvebl0n6cub43" path="res://sprites/lever/lever_angle_200px/lever_angle.0012.png" id="15_phu1k"]
+[ext_resource type="Texture2D" uid="uid://trhihr1u23rx" path="res://sprites/lever/lever_angle_200px/lever_angle.0013.png" id="16_erau5"]
+[ext_resource type="Texture2D" uid="uid://dbghl5xsfmrp8" path="res://sprites/lever/lever_angle_200px/lever_angle.0014.png" id="17_qgtb7"]
+[ext_resource type="Texture2D" uid="uid://dhps4irt7vlao" path="res://sprites/lever/lever_angle_200px/lever_angle.0015.png" id="18_iuysi"]
+[ext_resource type="Texture2D" uid="uid://bef4pdc7mvdmg" path="res://sprites/lever/lever_angle_200px/lever_angle.0016.png" id="19_qtkc1"]
+[ext_resource type="Texture2D" uid="uid://bthcqgsc7cqbj" path="res://sprites/lever/lever_angle_200px/lever_angle.0017.png" id="20_afxi1"]
+[ext_resource type="Texture2D" uid="uid://c86ax4vsvppss" path="res://sprites/lever/lever_angle_200px/lever_angle.0018.png" id="21_kl4c3"]
+[ext_resource type="Texture2D" uid="uid://bprawysjlcv4h" path="res://sprites/lever/lever_angle_200px/lever_angle.0019.png" id="22_fdodv"]
+[ext_resource type="Texture2D" uid="uid://vro25t477s7c" path="res://sprites/lever/lever_angle_200px/lever_angle.0020.png" id="23_mqxsw"]
+[ext_resource type="Texture2D" uid="uid://lirqu0dfk54g" path="res://sprites/lever/lever_angle_200px/lever_angle.0021.png" id="24_uu5x4"]
+[ext_resource type="Texture2D" uid="uid://ccumbcv8ykdka" path="res://sprites/lever/lever_angle_200px/lever_angle.0022.png" id="25_4gfve"]
+[ext_resource type="Texture2D" uid="uid://ddga3t7bhiwj3" path="res://sprites/lever/lever_angle_200px/lever_angle.0023.png" id="26_hqotw"]
+[ext_resource type="Texture2D" uid="uid://7jpq5ymffydv" path="res://sprites/lever/lever_angle_200px/lever_angle.0024.png" id="27_4jqtv"]
+[ext_resource type="Texture2D" uid="uid://1gmxx3inps31" path="res://sprites/lever/lever_angle_200px/lever_angle.0025.png" id="28_7sfbs"]
+[ext_resource type="Texture2D" uid="uid://c6qro8gbkc3jq" path="res://sprites/lever/lever_angle_200px/lever_angle.0026.png" id="29_a1j5v"]
+[ext_resource type="Texture2D" uid="uid://cdhflrkri8rhi" path="res://sprites/lever/lever_angle_200px/lever_angle.0027.png" id="30_2yi5d"]
+[ext_resource type="Texture2D" uid="uid://bv5gvnnsu4gq8" path="res://sprites/lever/lever_angle_200px/lever_angle.0028.png" id="31_anhq8"]
+[ext_resource type="Texture2D" uid="uid://d4l74mf3gg431" path="res://sprites/lever/lever_angle_200px/lever_angle.0029.png" id="32_krouu"]
+[ext_resource type="Texture2D" uid="uid://b0d1b5t143xup" path="res://sprites/lever/lever_angle_200px/lever_angle.0030.png" id="33_4re2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dmtr"]
-size = Vector2(100, 100)
+size = Vector2(160, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_525by"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_35s6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k73y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mlmvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1q24d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eh7ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8qg01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_db102")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d1s40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x34qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_efeel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iruqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i2re6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_phu1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_erau5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qgtb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_iuysi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qtkc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_afxi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kl4c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_fdodv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mqxsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_uu5x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_4gfve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_hqotw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4jqtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_7sfbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_a1j5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_2yi5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_anhq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_krouu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4re2m")
+}],
+"loop": false,
+"name": &"activate",
+"speed": 60.0
+}]
 
 [node name="Lever" type="Area2D"]
 script = ExtResource("1_f8hny")
 toggleable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 10)
 shape = SubResource("RectangleShape2D_7dmtr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_jetau")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_525by")
+animation = &"activate"

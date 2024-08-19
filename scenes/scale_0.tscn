@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dpaxlkqtm7uq5"]
+[gd_scene load_steps=9 format=4 uid="uid://dpaxlkqtm7uq5"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_2i8hn"]
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player_wadl.tscn" id="1_yixew"]
 [ext_resource type="Texture2D" uid="uid://bamoerh7lero7" path="res://sprites/environment/Wires-ambience.png" id="2_w7e8f"]
 [ext_resource type="PackedScene" uid="uid://cqq1uhv7kjtcx" path="res://scenes/lever.tscn" id="4_1ii6s"]
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="4_11ug5"]
+[ext_resource type="PackedScene" uid="uid://nyairciy3dvb" path="res://scenes/button.tscn" id="5_skgjq"]
 
 [sub_resource type="Gradient" id="Gradient_dcy3c"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -38,6 +39,9 @@ use_kinematic_bodies = true
 [node name="Lever" parent="Environment" instance=ExtResource("4_1ii6s")]
 position = Vector2(347, -41)
 signal_name = &"lever_1"
+
+[node name="Button" parent="Environment" instance=ExtResource("5_skgjq")]
+position = Vector2(90, 2)
 
 [node name="WADL" parent="." instance=ExtResource("1_yixew")]
 position = Vector2(0, -164)
