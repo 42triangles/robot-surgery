@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://scripts/puzzle_interactible.gd" id="5_x40to"]
 [ext_resource type="Texture2D" uid="uid://b043u2wgkwact" path="res://sprites/environment/Lever-or-such.png" id="6_dhu2v"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dmtr"]
+size = Vector2(100, 100)
+
 [sub_resource type="Gradient" id="Gradient_dcy3c"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
@@ -18,9 +21,6 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dmtr"]
-size = Vector2(100, 100)
-
 [node name="Scale0" type="Node2D"]
 script = ExtResource("1_2i8hn")
 
@@ -30,18 +30,6 @@ scroll_scale = Vector2(0.4, 0.4)
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 position = Vector2(300, 0)
 texture = ExtResource("2_w7e8f")
-
-[node name="Player" parent="." groups=["players"] instance=ExtResource("1_yixew")]
-position = Vector2(0, -164)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -80)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-
-[node name="PointLight2D" type="PointLight2D" parent="Player"]
-texture = SubResource("GradientTexture2D_btg2d")
-texture_scale = 8.0
 
 [node name="Environment" type="Node2D" parent="."]
 modulate = Color(0.793341, 0.813187, 0.578592, 1)
@@ -63,6 +51,18 @@ shape = SubResource("RectangleShape2D_7dmtr")
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Node2D"]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("6_dhu2v")
+
+[node name="Player" parent="." groups=["players"] instance=ExtResource("1_yixew")]
+position = Vector2(0, -164)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -80)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+texture = SubResource("GradientTexture2D_btg2d")
+texture_scale = 8.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)

@@ -26,6 +26,13 @@ scroll_scale = Vector2(0.4, 0.4)
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture = ExtResource("2_3230d")
 
+[node name="Environment" type="Node2D" parent="."]
+modulate = Color(0.716564, 0.864575, 0.867643, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Environment"]
+tile_map_data = PackedByteArray("AAD8/wEAAwAAAAAAAAD8/wIAAwAAAAEAAAD8/wMAAwAAAAIAAAD9/wEAAwABAAAAAAD9/wIAAwABAAEAAAD9/wMAAwABAAIAAAD+/wEAAwACAAAAAAD+/wIAAwACAAEAAAD+/wMAAwACAAIAAAD//wEAAwAAAAAAAAD//wIAAwAAAAEAAAD//wMAAwAAAAIAAAAAAAEAAwABAAAAAAAAAAIAAwABAAEAAAAAAAMAAwABAAIAAAABAAEAAwACAAAAAAABAAIAAwACAAEAAAABAAMAAwACAAIAAAACAAEAAwAAAAAAAAACAAIAAwAAAAEAAAACAAMAAwAAAAIAAAADAAEAAwABAAAAAAADAAIAAwABAAEAAAADAAMAAwABAAIAAAAEAAEAAwACAAAAAAAEAAIAAwACAAEAAAAEAAMAAwACAAIAAAA=")
+tile_set = ExtResource("5_ofejn")
+
 [node name="Player" parent="." groups=["players"] instance=ExtResource("1_2of5g")]
 position = Vector2(0, -62)
 move_tip = 10.0
@@ -43,13 +50,6 @@ relative_scale = 3.0
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
 texture = SubResource("GradientTexture2D_nadfp")
 texture_scale = 8.0
-
-[node name="Environment" type="Node2D" parent="."]
-modulate = Color(0.716564, 0.864575, 0.867643, 1)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Environment"]
-tile_map_data = PackedByteArray("AAD8/wEAAwAAAAAAAAD8/wIAAwAAAAEAAAD8/wMAAwAAAAIAAAD9/wEAAwABAAAAAAD9/wIAAwABAAEAAAD9/wMAAwABAAIAAAD+/wEAAwACAAAAAAD+/wIAAwACAAEAAAD+/wMAAwACAAIAAAD//wEAAwAAAAAAAAD//wIAAwAAAAEAAAD//wMAAwAAAAIAAAAAAAEAAwABAAAAAAAAAAIAAwABAAEAAAAAAAMAAwABAAIAAAABAAEAAwACAAAAAAABAAIAAwACAAEAAAABAAMAAwACAAIAAAACAAEAAwAAAAAAAAACAAIAAwAAAAEAAAACAAMAAwAAAAIAAAADAAEAAwABAAAAAAADAAIAAwABAAEAAAADAAMAAwABAAIAAAAEAAEAAwACAAAAAAAEAAIAAwACAAEAAAAEAAMAAwACAAIAAAA=")
-tile_set = ExtResource("5_ofejn")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.188969, 0.188969, 0.188969, 1)
