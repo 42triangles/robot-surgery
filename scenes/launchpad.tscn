@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ybx0aagjkb6r"]
+
+[ext_resource type="Script" path="res://scenes/launchpad.gd" id="1_bm6g6"]
+[ext_resource type="Texture2D" uid="uid://b043u2wgkwact" path="res://sprites/environment/Lever-or-such.png" id="2_bv0y8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dmtr"]
+size = Vector2(100, 100)
+
+[node name="Launchpad" type="Area2D"]
+script = ExtResource("1_bm6g6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7dmtr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_bv0y8")
+
+[connection signal="body_entered" from="." to="." method="try_launch"]
+[connection signal="body_exited" from="." to="." method="launch_done"]

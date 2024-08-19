@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var movement_scale: float = 100
