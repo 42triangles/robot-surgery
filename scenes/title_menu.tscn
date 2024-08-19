@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy12dwfpkvbry"]
+
+[ext_resource type="Script" path="res://scripts/load_scene_button.gd" id="1_ei7ey"]
+[ext_resource type="AudioStream" uid="uid://dvmjvmpn17d8n" path="res://audio/Byte-sized Menu 1.ogg" id="2_br3ir"]
+[ext_resource type="Script" path="res://scripts/exit_button.gd" id="2_rdwek"]
+
+[sub_resource type="Theme" id="Theme_tk3rk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6djty"]
+font_size = 100
+
+[node name="TitleMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tk3rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 149.0
+offset_bottom = 98.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Title Goes Here"
+label_settings = SubResource("LabelSettings_6djty")
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "  START  "
+script = ExtResource("1_ei7ey")
+scene_path = "res://scenes/world.tscn"
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "  CREDITS  "
+script = ExtResource("1_ei7ey")
+scene_path = "res://scenes/credits_menu.tscn"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "  EXIT  "
+script = ExtResource("2_rdwek")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_br3ir")
+autoplay = true
