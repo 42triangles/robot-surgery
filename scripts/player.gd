@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var jump_power: float = 2000
 @export_custom(PROPERTY_HINT_NONE, "suffix:°") var move_tip: float = 0
 
-var movement: float
+var movement: float = 0
 
 func _process(delta: float) -> void:
 	velocity += get_gravity()
