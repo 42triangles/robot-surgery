@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhky34uvgy0vl"
-path="res://.godot/imported/Cool-environment.png-d05a000fdb43b5e98cd0140fe84a392b.ctex"
+uid="uid://ngwbg6qhe5as"
+path="res://.godot/imported/background_02_v2.png-1e811fa5093698ea1930593d63390e84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/environment/Cool-environment.png"
-dest_files=["res://.godot/imported/Cool-environment.png-d05a000fdb43b5e98cd0140fe84a392b.ctex"]
+source_file="res://sprites/environment/background_02_v2.png"
+dest_files=["res://.godot/imported/background_02_v2.png-1e811fa5093698ea1930593d63390e84.ctex"]
 
 [params]
 
