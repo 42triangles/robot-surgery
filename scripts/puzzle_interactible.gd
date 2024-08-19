@@ -1,4 +1,4 @@
-extends Area2D
+class_name PuzzleInteractible extends Area2D
 
 @export var signal_name: StringName
 @export var toggleable: bool

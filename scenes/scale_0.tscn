@@ -1,14 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://dpaxlkqtm7uq5"]
+[gd_scene load_steps=8 format=4 uid="uid://dpaxlkqtm7uq5"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_2i8hn"]
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player.tscn" id="1_yixew"]
 [ext_resource type="Texture2D" uid="uid://bamoerh7lero7" path="res://sprites/environment/Wires-ambience.png" id="2_w7e8f"]
+[ext_resource type="PackedScene" uid="uid://cqq1uhv7kjtcx" path="res://scenes/lever.tscn" id="4_1ii6s"]
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="4_11ug5"]
-[ext_resource type="Script" path="res://scripts/puzzle_interactible.gd" id="5_x40to"]
-[ext_resource type="Texture2D" uid="uid://b043u2wgkwact" path="res://sprites/environment/Lever-or-such.png" id="6_dhu2v"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dmtr"]
-size = Vector2(100, 100)
 
 [sub_resource type="Gradient" id="Gradient_dcy3c"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -39,18 +35,9 @@ tile_map_data = PackedByteArray("AAD7/wEAAwABAAAAAQD8/wEAAwABAAAAAAD9/wEAAwACAAA
 tile_set = ExtResource("4_11ug5")
 use_kinematic_bodies = true
 
-[node name="Node2D" type="Area2D" parent="Environment"]
+[node name="Lever" parent="Environment" instance=ExtResource("4_1ii6s")]
 position = Vector2(347, -41)
-script = ExtResource("5_x40to")
 signal_name = &"lever_1"
-toggleable = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Node2D"]
-shape = SubResource("RectangleShape2D_7dmtr")
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Node2D"]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("6_dhu2v")
 
 [node name="Player" parent="." groups=["players"] instance=ExtResource("1_yixew")]
 position = Vector2(0, -164)
