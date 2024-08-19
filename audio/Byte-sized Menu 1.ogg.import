@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dvmjvmpn17d8n"
+path="res://.godot/imported/Byte-sized Menu 1.ogg-0d123a1c869a3f16d5297bd1a7ee44ac.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/Byte-sized Menu 1.ogg"
+dest_files=["res://.godot/imported/Byte-sized Menu 1.ogg-0d123a1c869a3f16d5297bd1a7ee44ac.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

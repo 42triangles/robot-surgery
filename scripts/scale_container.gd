@@ -1,3 +1,4 @@
+class_name ScaleContainer
 extends SubViewportContainer
 
 @export var tween_time: float = 0.2
@@ -8,7 +9,7 @@ var tween: Tween
 func fade(fade_in: bool, scale_increasing: bool) -> void:
 	var target_modulate: Color
 	var target_scale: Vector2
-	
+
 	if fade_in:
 		modulate = Color.TRANSPARENT
 		target_modulate = Color.WHITE
@@ -33,8 +34,3 @@ func fade(fade_in: bool, scale_increasing: bool) -> void:
 	
 	tween.tween_property(self, "modulate", target_modulate, tween_time)
 	tween.tween_property(self, "scale", target_scale, tween_time)
-	
-	if fade_in:
-		show()
-	else:
-		tween.tween_callback(self.hide).set_delay(tween_time)

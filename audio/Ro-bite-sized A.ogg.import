@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cf7ooq5s4fx1g"
+path="res://.godot/imported/Ro-bite-sized A.ogg-82437be2a9f9bc24668a756bebe85a57.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/Ro-bite-sized A.ogg"
+dest_files=["res://.godot/imported/Ro-bite-sized A.ogg-82437be2a9f9bc24668a756bebe85a57.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

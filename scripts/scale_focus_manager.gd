@@ -1,7 +1,10 @@
 extends Node
 
-@export var scale_layers: Array[Node] = []
-@export var scale_containers: Array[Node] = []
+signal focusing(index: int)
+
+@export var scale_layers: Array[ScaleLayer] = []
+@export var scale_containers: Array[ScaleContainer] = []
+@export var mini_views: Array[MiniView] = []
 
 var current_focus: int = 1:
 	set(new_value):
@@ -10,16 +13,24 @@ var current_focus: int = 1:
 			
 			scale_layers[current_focus].unfocused.emit()
 			scale_containers[current_focus].fade(false, scale_increasing)
+			mini_views[current_focus].fade(true)
 			
 			current_focus = new_value
 			
 			scale_layers[current_focus].focused.emit()
 			scale_containers[current_focus].fade(true, scale_increasing)
+			mini_views[current_focus].fade(false)
+			
+			focusing.emit(current_focus)
 
 func _ready() -> void:
-	for scale_layer in scale_layers:
-		scale_layer.unfocused.emit()
-	scale_layers[current_focus].focused.emit()
+	assert(scale_layers.size() == scale_containers.size())
+	assert(scale_layers.size() == mini_views.size())
+	for index in range(scale_layers.size()):
+		if index == current_focus:
+			continue
+		scale_layers[index].unfocused.emit()
+		scale_containers[index].modulate = Color.TRANSPARENT
 
 func toggle_focus() -> void:
 	if current_focus == 0:
