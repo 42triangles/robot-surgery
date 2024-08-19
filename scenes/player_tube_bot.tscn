@@ -1,9 +1,10 @@
-[gd_scene load_steps=94 format=3 uid="uid://wx8bj1rklpwo"]
+[gd_scene load_steps=96 format=3 uid="uid://wx8bj1rklpwo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_hs5y5"]
 [ext_resource type="Script" path="res://scripts/wheel.gd" id="3_bhh3v"]
 [ext_resource type="Texture2D" uid="uid://cw7xyqmnj7ew6" path="res://sprites/tube_bot/tube_bot_200px/interact/tube_bot_render.0040.png" id="3_ghmvh"]
 [ext_resource type="Texture2D" uid="uid://hiwxm75rdiev" path="res://sprites/tube_bot/tube_bot_200px/turn/tube_bot_render.0070.png" id="3_rf4um"]
+[ext_resource type="Script" path="res://scripts/tube_bot_walk_audio.gd" id="3_ytgb5"]
 [ext_resource type="Texture2D" uid="uid://c3vmr36op3swp" path="res://sprites/tube_bot/tube_bot_200px/turn/tube_bot_render.0071.png" id="4_cg85b"]
 [ext_resource type="Texture2D" uid="uid://bb66px1mvc0rn" path="res://sprites/tube_bot/tube_bot_200px/interact/tube_bot_render.0041.png" id="4_geyoa"]
 [ext_resource type="Texture2D" uid="uid://ba7yxwpi8c6nj" path="res://sprites/tube_bot/tube_bot_200px/interact/tube_bot_render.0042.png" id="5_lfr3u"]
@@ -91,6 +92,7 @@
 [ext_resource type="Texture2D" uid="uid://b75otjgqstkf4" path="res://sprites/tube_bot/tube_bot_200px/jump/tube_bot_render.0029.png" id="58_pe5ok"]
 [ext_resource type="Texture2D" uid="uid://e4oaxccyojqc" path="res://sprites/tube_bot/tube_bot_200px/jump/tube_bot_render.0030.png" id="59_1gsh3"]
 [ext_resource type="Texture2D" uid="uid://bvi0yba11j12r" path="res://sprites/tube_bot/tube_bot_200px/tube_bot_wheel.png" id="90_w66a8"]
+[ext_resource type="AudioStream" uid="uid://bkv0g8tw7x4rd" path="res://audio/sfx/tube_bot_walk.ogg" id="92_lpux4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvp8o"]
 animations = [{
@@ -403,6 +405,13 @@ offset_top = 40.0
 offset_bottom = 100.0
 pivot_offset = Vector2(5, 0)
 color = Color(0.281516, 0.163515, 0.0854165, 1)
+
+[node name="WalkAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("92_lpux4")
+volume_db = -30.0
+autoplay = true
+script = ExtResource("3_ytgb5")
+default_volume_db = -24.0
 
 [node name="Wheel" type="Sprite2D" parent="."]
 position = Vector2(-3, 100)
