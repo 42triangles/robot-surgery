@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://hbpgw80ffdmr"]
+[gd_scene load_steps=86 format=3 uid="uid://hbpgw80ffdmr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_v5hpp"]
 [ext_resource type="Texture2D" uid="uid://c6ndusbtqhaws" path="res://sprites/wadl/walk/WADL-walk-000.png" id="3_vhas1"]
@@ -342,11 +342,14 @@ animations = [{
 "speed": 120.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slchu"]
+size = Vector2(95, 117)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vu6p"]
+radius = 69.1158
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_v5hpp")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-64, 100, -64, -32, 50, -32, 50, 18, 100, 18, 100, 42, 32, 42, 32, 100)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.255, 0.255)
@@ -355,3 +358,11 @@ animation = &"walk"
 autoplay = "walk"
 frame = 50
 frame_progress = 0.903373
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16.5, 41.5)
+shape = SubResource("RectangleShape2D_slchu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(30, 31)
+shape = SubResource("CircleShape2D_2vu6p")
