@@ -28,8 +28,8 @@ func _on_focusing(index: int) -> void:
 	tween.tween_method(set_stream_a_volume, stream.get_sync_stream_volume(0), target_volume_a, tween_time_a)
 	tween.tween_method(set_stream_b_volume, stream.get_sync_stream_volume(1), target_volume_b, tween_time_b)
 
-func set_stream_a_volume(volume_db: float) -> void:
-	stream.set_sync_stream_volume(0, volume_db)
+func set_stream_a_volume(db: float) -> void:
+	stream.set_sync_stream_volume(0, db)
 
-func set_stream_b_volume(volume_db: float) -> void:
-	stream.set_sync_stream_volume(1, volume_db)
+func set_stream_b_volume(db: float) -> void:
+	stream.set_sync_stream_volume(1, db)

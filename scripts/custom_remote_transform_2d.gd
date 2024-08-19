@@ -10,7 +10,7 @@ func _ready() -> void:
 	if is_instance_valid(target):
 		offset = target.position - relative_scale * global_position
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_instance_valid(target):
 		target.global_rotation = global_rotation
 		target.global_position = offset + relative_scale * global_position

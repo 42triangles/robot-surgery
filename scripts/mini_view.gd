@@ -4,9 +4,9 @@ class_name MiniView extends TextureRect
 
 var tween: Tween
 
-func fade(is_visible: bool) -> void:
+func fade(become_visible: bool) -> void:
 	var target_modulate: Color
-	if is_visible:
+	if become_visible:
 		modulate = Color.TRANSPARENT
 		target_modulate = Color.WHITE
 	else:
