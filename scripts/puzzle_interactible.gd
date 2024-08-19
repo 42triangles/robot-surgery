@@ -7,7 +7,6 @@ class_name PuzzleInteractible extends Area2D
 var active: bool = false
 
 func interact() -> void:
-	print("interacted")
 	if toggleable:
 		state = !state
 		PuzzleRelay.emit_signal(signal_name, state)
