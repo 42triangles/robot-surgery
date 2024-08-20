@@ -401,8 +401,9 @@ height = 180.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_7516a"]
 radius = 64.0
 
-[node name="TubeBot" type="CharacterBody2D"]
+[node name="TubeBot" type="CharacterBody2D" node_paths=PackedStringArray("has_to_flip")]
 script = ExtResource("1_hs5y5")
+has_to_flip = [NodePath("CollisionShape2D"), NodePath("InteractionArea")]
 
 [node name="WalkAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("92_lpux4")

@@ -591,8 +591,9 @@ radius = 69.1158
 [sub_resource type="CircleShape2D" id="CircleShape2D_rgq02"]
 radius = 60.0
 
-[node name="WADL" type="CharacterBody2D"]
+[node name="WADL" type="CharacterBody2D" node_paths=PackedStringArray("has_to_flip")]
 script = ExtResource("1_tv6h6")
+has_to_flip = [NodePath("CollisionShape2D"), NodePath("CollisionShape2D2"), NodePath("InteractionArea")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 18)
