@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dpaxlkqtm7uq5"]
+[gd_scene load_steps=11 format=4 uid="uid://dpaxlkqtm7uq5"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_2i8hn"]
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player_wadl.tscn" id="1_yixew"]
@@ -7,6 +7,7 @@
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="4_11ug5"]
 [ext_resource type="Script" path="res://scripts/door.gd" id="5_t5v1y"]
 [ext_resource type="PackedScene" uid="uid://so5gcdiiubfp" path="res://scenes/animatable_block.tscn" id="6_1vs2b"]
+[ext_resource type="PackedScene" uid="uid://bye2ivywbf558" path="res://scenes/level_bounds.tscn" id="8_2in4v"]
 
 [sub_resource type="Gradient" id="Gradient_dcy3c"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -54,6 +55,11 @@ displacement = Vector2(0, 200)
 [node name="AnimatableBlock2" parent="Environment/IntroDoor" instance=ExtResource("6_1vs2b")]
 position = Vector2(0, -100)
 
+[node name="LevelBounds" parent="Environment" instance=ExtResource("8_2in4v")]
+
+[node name="CollisionShape2D" parent="Environment/LevelBounds" index="0"]
+position = Vector2(129.5, -248.5)
+
 [node name="WADL" parent="." instance=ExtResource("1_yixew")]
 position = Vector2(-400, -4)
 
@@ -70,3 +76,5 @@ texture_scale = 8.0
 color = Color(0, 0, 0, 1)
 
 [connection signal="unfocused" from="." to="WADL" method="_on_scale_layer_unfocused"]
+
+[editable path="Environment/LevelBounds"]

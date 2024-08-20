@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dhmrdr8obqljr"]
+[gd_scene load_steps=15 format=4 uid="uid://dhmrdr8obqljr"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_ed270"]
 [ext_resource type="Texture2D" uid="uid://ngwbg6qhe5as" path="res://sprites/environment/background_02_v2.png" id="2_rwci2"]
@@ -9,6 +9,7 @@
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="5_ofejn"]
 [ext_resource type="PackedScene" uid="uid://so5gcdiiubfp" path="res://scenes/animatable_block.tscn" id="6_faqfv"]
 [ext_resource type="PackedScene" uid="uid://cqq1uhv7kjtcx" path="res://scenes/lever.tscn" id="9_uiba2"]
+[ext_resource type="PackedScene" uid="uid://bye2ivywbf558" path="res://scenes/level_bounds.tscn" id="10_8tql8"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xsu23"]
 a = Vector2(-100, 0)
@@ -79,6 +80,12 @@ points = PackedVector2Array(-100, 0, 100, 0)
 width = 8.0
 gradient = SubResource("Gradient_aa7at")
 
+[node name="LevelBounds" parent="Environment" instance=ExtResource("10_8tql8")]
+position = Vector2(-300, -20)
+
+[node name="CollisionShape2D" parent="Environment/LevelBounds" index="0"]
+position = Vector2(340, -248.5)
+
 [node name="TubeBot" parent="." instance=ExtResource("5_8utv3")]
 position = Vector2(-300, -20)
 move_tip = 10.0
@@ -101,3 +108,7 @@ texture_scale = 8.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.188969, 0.188969, 0.188969, 1)
+
+[connection signal="died" from="TubeBot" to="TubeBot/CustomRemoteTransform2D" method="update_offset_by_parent"]
+
+[editable path="Environment/LevelBounds"]

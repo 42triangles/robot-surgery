@@ -2,12 +2,15 @@ class_name Player
 extends CharacterBody2D
 
 signal jumping
+signal died(old_position: Vector2, new_position: Vector2)
 
 @export var movement_scale: float = 100
 @export var friction: float = 50
 @export var max_speed: float = 600
 @export var jump_power: float = 2000
 @export_custom(PROPERTY_HINT_NONE, "suffix:°") var move_tip: float = 0
+@export var checkpoint: Checkpoint
+@export var has_to_flip: Array[Node2D] = []
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -16,12 +19,21 @@ var facing_left: bool = false:
 	set(new_value):
 		if new_value != facing_left:
 			facing_left = new_value
+			for i in has_to_flip:
+				i.scale.x = -i.scale.x
+				i.position.x = -i.position.x
 			sprite.flip_h = facing_left
 			sprite.play_backwards("rotate")
 
 func _ready() -> void:
 	sprite.animation_looped.connect(_on_sprite_animation_looped)
 	sprite.animation_finished.connect(_on_sprite_animation_finished)
+	
+	if checkpoint == null:
+		checkpoint = load("res://scenes/checkpoint.tscn").instantiate()
+		checkpoint.position = position
+		checkpoint.facing_left = facing_left
+		get_parent().find_child("Environment").add_child(checkpoint)
 
 func _process(delta: float) -> void:
 	velocity += get_gravity()
@@ -76,3 +88,14 @@ func _on_sprite_animation_looped() -> void:
 
 func _on_interaction_area_interacting() -> void:
 	sprite.play("interact")
+
+func die() -> void:
+	var old_position = global_position
+	
+	global_position = checkpoint.global_position
+	velocity = Vector2.ZERO
+	rotation = 0
+	movement = 0
+	facing_left = checkpoint.facing_left
+	
+	died.emit(old_position, global_position)
