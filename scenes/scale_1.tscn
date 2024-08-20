@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://dhmrdr8obqljr"]
+[gd_scene load_steps=11 format=4 uid="uid://dhmrdr8obqljr"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_ed270"]
 [ext_resource type="Texture2D" uid="uid://ngwbg6qhe5as" path="res://sprites/environment/background_02_v2.png" id="2_rwci2"]
 [ext_resource type="Script" path="res://scripts/custom_remote_transform_2d.gd" id="4_8tmn4"]
 [ext_resource type="PackedScene" uid="uid://ybx0aagjkb6r" path="res://scenes/launchpad.tscn" id="4_vi157"]
 [ext_resource type="PackedScene" uid="uid://wx8bj1rklpwo" path="res://scenes/player_tube_bot.tscn" id="5_8utv3"]
+[ext_resource type="Script" path="res://scripts/animatable_block.gd" id="5_jncu6"]
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="5_ofejn"]
+[ext_resource type="PackedScene" uid="uid://so5gcdiiubfp" path="res://scenes/animatable_block.tscn" id="6_faqfv"]
 
 [sub_resource type="Gradient" id="Gradient_exr7v"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -32,17 +34,48 @@ texture = ExtResource("2_rwci2")
 modulate = Color(0.716564, 0.864575, 0.867643, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Environment"]
-tile_map_data = PackedByteArray("AAD8/wEAAwAAAAAAAAD8/wIAAwAAAAEAAAD8/wMAAwAAAAIAAAD9/wEAAwABAAAAAAD9/wIAAwABAAEAAAD9/wMAAwABAAIAAAD+/wEAAwACAAAAAAD+/wIAAwACAAEAAAD+/wMAAwACAAIAAAD//wEAAwAAAAAAAAD//wIAAwAAAAEAAAD//wMAAwAAAAIAAAAAAAEAAwABAAAAAAAAAAIAAwABAAEAAAAAAAMAAwABAAIAAAABAAEAAwACAAAAAAABAAIAAwACAAEAAAABAAMAAwACAAIAAAACAAEAAwAAAAAAAAACAAIAAwAAAAEAAAACAAMAAwAAAAIAAAADAAEAAwABAAAAAAADAAIAAwABAAEAAAADAAMAAwABAAIAAAAEAAEAAwACAAAAAAAEAAIAAwACAAEAAAAEAAMAAwACAAIAAAAEAAAAAwABAAEAAAAEAP//AwABAAEAAAA=")
+tile_map_data = PackedByteArray("AAD8/wEAAwAAAAAAAAD8/wIAAwAAAAEAAAD8/wMAAwAAAAIAAAD9/wEAAwABAAAAAAD9/wIAAwABAAEAAAD9/wMAAwABAAIAAAD+/wEAAwABAAAAAQD+/wIAAwABAAEAAAD+/wMAAwABAAIAAQD//wEAAwABAAAAAAD//wIAAwABAAEAAAD//wMAAwABAAIAAAAAAAEAAwABAAAAAQAAAAIAAwABAAEAAAAAAAMAAwABAAIAAQABAAEAAwABAAAAAAABAAIAAwABAAEAAAABAAMAAwABAAIAAAACAAEAAwACAAAAAAACAAIAAwACAAEAAAACAAMAAwACAAIAAAADAAEAAwAAAAAAAAADAAIAAwAAAAEAAAADAAMAAwAAAAIAAAAEAAEAAwABAAAAAAAEAAIAAwABAAEAAAAEAAMAAwABAAIAAAAEAAAAAwABAAEAAAAEAP//AwABAAEAAAD5/wEAAwABAAAAAQD5/wIAAwABAAEAAAD5/wMAAwABAAIAAQD6/wEAAwABAAAAAAD6/wIAAwABAAEAAAD6/wMAAwABAAIAAAD7/wEAAwACAAAAAAD7/wIAAwACAAEAAAD7/wMAAwACAAIAAAD2/wEAAwABAAAAAAD2/wIAAwABAAEAAAD2/wMAAwABAAIAAAD3/wEAAwABAAAAAQD3/wIAAwABAAEAAAD3/wMAAwABAAIAAQD4/wEAAwABAAAAAAD4/wIAAwABAAEAAAD4/wMAAwABAAIAAAD1/wEAAwAAAAAAAAD1/wIAAwAAAAEAAAD1/wMAAwAAAAIAAAAFAAEAAwABAAAAAQAFAAIAAwABAAEAAAAFAAMAAwABAAIAAQAGAAEAAwABAAAAAAAGAAIAAwABAAEAAAAGAAMAAwABAAIAAAAHAAEAAwABAAAAAQAHAAIAAwABAAEAAAAHAAMAAwABAAIAAQAIAAEAAwABAAAAAAAIAAIAAwABAAEAAAAIAAMAAwABAAIAAAAJAAEAAwACAAAAAAAJAAIAAwACAAEAAAAJAAMAAwACAAIAAAA=")
 tile_set = ExtResource("5_ofejn")
 
 [node name="Launchpad" parent="Environment" instance=ExtResource("4_vi157")]
 position = Vector2(343, 52)
 
+[node name="IntroWalls" type="Node2D" parent="Environment"]
+position = Vector2(0, 50)
+
+[node name="AnimatableBlock" parent="Environment/IntroWalls" instance=ExtResource("6_faqfv")]
+position = Vector2(-150, 0)
+script = ExtResource("5_jncu6")
+signal_name = &"lever_1"
+toggleable = true
+displacement = Vector2(0, -300)
+
+[node name="AnimatableBlock2" parent="Environment/IntroWalls" instance=ExtResource("6_faqfv")]
+position = Vector2(-150, -100)
+script = ExtResource("5_jncu6")
+signal_name = &"lever_1"
+toggleable = true
+displacement = Vector2(0, -300)
+
+[node name="AnimatableBlock3" parent="Environment/IntroWalls" instance=ExtResource("6_faqfv")]
+position = Vector2(150, 0)
+script = ExtResource("5_jncu6")
+signal_name = &"lever_1"
+toggleable = true
+displacement = Vector2(0, -300)
+
+[node name="AnimatableBlock4" parent="Environment/IntroWalls" instance=ExtResource("6_faqfv")]
+position = Vector2(150, -100)
+script = ExtResource("5_jncu6")
+signal_name = &"lever_1"
+toggleable = true
+displacement = Vector2(0, -300)
+
 [node name="TubeBot" parent="." instance=ExtResource("5_8utv3")]
 move_tip = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="TubeBot"]
-position = Vector2(0, -190.85)
+position = Vector2(0, -100)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
