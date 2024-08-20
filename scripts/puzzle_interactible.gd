@@ -9,6 +9,8 @@ class_name PuzzleInteractible extends Area2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
+var was_used: bool = false
+
 func actual_interact() -> void:
 	audio.play()
 	if toggleable:
@@ -29,7 +31,9 @@ func actual_interact() -> void:
 	
 func interact() -> void:
 	if not interact_on_collision:
-		actual_interact()
+		if not one_time_use or not was_used:
+			was_used = true
+			actual_interact()
 
 func _ready() -> void:
 	if toggleable and (state == true):
