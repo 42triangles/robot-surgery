@@ -13,6 +13,8 @@ config_version=5
 config/name="Inside Job"
 run/main_scene="res://scenes/title_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.709804, 0.709804, 0.709804, 1)
+boot_splash/image="res://sprites/Inside_Job_Logo.png"
 config/icon="res://icon.svg"
 
 [autoload]
