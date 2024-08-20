@@ -111,6 +111,6 @@ texture = SubResource("GradientTexture2D_nadfp")
 texture_scale = 8.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.188969, 0.188969, 0.188969, 1)
+color = Color(0.372251, 0.372251, 0.372251, 1)
 
 [connection signal="unfocused" from="." to="TubeBot" method="_on_scale_layer_unfocused"]

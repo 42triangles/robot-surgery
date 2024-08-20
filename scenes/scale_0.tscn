@@ -88,6 +88,6 @@ texture = SubResource("GradientTexture2D_btg2d")
 texture_scale = 8.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0.306923, 0.306923, 0.306923, 1)
 
 [connection signal="unfocused" from="." to="WADL" method="_on_scale_layer_unfocused"]
