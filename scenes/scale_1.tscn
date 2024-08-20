@@ -1,13 +1,12 @@
-[gd_scene load_steps=15 format=4 uid="uid://dhmrdr8obqljr"]
+[gd_scene load_steps=14 format=4 uid="uid://dhmrdr8obqljr"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_ed270"]
 [ext_resource type="Texture2D" uid="uid://ngwbg6qhe5as" path="res://sprites/environment/background_02_v2.png" id="2_rwci2"]
 [ext_resource type="Script" path="res://scripts/custom_remote_transform_2d.gd" id="4_8tmn4"]
 [ext_resource type="PackedScene" uid="uid://ybx0aagjkb6r" path="res://scenes/launchpad.tscn" id="4_vi157"]
 [ext_resource type="PackedScene" uid="uid://wx8bj1rklpwo" path="res://scenes/player_tube_bot.tscn" id="5_8utv3"]
-[ext_resource type="Script" path="res://scripts/door.gd" id="5_jncu6"]
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="5_ofejn"]
-[ext_resource type="PackedScene" uid="uid://so5gcdiiubfp" path="res://scenes/animatable_block.tscn" id="6_faqfv"]
+[ext_resource type="PackedScene" uid="uid://cn52d14tbhk4y" path="res://scenes/door.tscn" id="6_qftwq"]
 [ext_resource type="PackedScene" uid="uid://cqq1uhv7kjtcx" path="res://scenes/lever.tscn" id="9_uiba2"]
 [ext_resource type="PackedScene" uid="uid://bye2ivywbf558" path="res://scenes/level_bounds.tscn" id="10_8tql8"]
 
@@ -55,17 +54,11 @@ velocity = Vector2(0, -2500)
 position = Vector2(-150, 42)
 signal_name = &"lever_1_1"
 
-[node name="IntroDoor" type="Node2D" parent="Environment"]
-position = Vector2(0, 50)
-script = ExtResource("5_jncu6")
+[node name="IntroDoor" parent="Environment" instance=ExtResource("6_qftwq")]
+position = Vector2(0, -50)
 signal_name = &"lever_1"
 toggleable = true
-displacement = Vector2(0, 200)
-
-[node name="AnimatableBlock" parent="Environment/IntroDoor" instance=ExtResource("6_faqfv")]
-
-[node name="AnimatableBlock2" parent="Environment/IntroDoor" instance=ExtResource("6_faqfv")]
-position = Vector2(0, -100)
+displacement = Vector2(0, 300)
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Environment"]
 position = Vector2(400, -100)

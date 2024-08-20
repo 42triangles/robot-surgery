@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dpaxlkqtm7uq5"]
+[gd_scene load_steps=11 format=4 uid="uid://dpaxlkqtm7uq5"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_2i8hn"]
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player_wadl.tscn" id="1_yixew"]
@@ -6,8 +6,7 @@
 [ext_resource type="Script" path="res://scripts/parallaxhack.gd" id="3_041o1"]
 [ext_resource type="PackedScene" uid="uid://cqq1uhv7kjtcx" path="res://scenes/lever.tscn" id="4_1ii6s"]
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="4_11ug5"]
-[ext_resource type="Script" path="res://scripts/door.gd" id="5_t5v1y"]
-[ext_resource type="PackedScene" uid="uid://so5gcdiiubfp" path="res://scenes/animatable_block.tscn" id="6_1vs2b"]
+[ext_resource type="PackedScene" uid="uid://cn52d14tbhk4y" path="res://scenes/door.tscn" id="6_0r52n"]
 [ext_resource type="PackedScene" uid="uid://bye2ivywbf558" path="res://scenes/level_bounds.tscn" id="8_2in4v"]
 
 [sub_resource type="Gradient" id="Gradient_dcy3c"]
@@ -45,17 +44,11 @@ use_kinematic_bodies = true
 position = Vector2(255, 41)
 signal_name = &"lever_1"
 
-[node name="IntroDoor" type="Node2D" parent="Environment"]
-position = Vector2(-200, 50)
-script = ExtResource("5_t5v1y")
+[node name="IntroDoor" parent="Environment" instance=ExtResource("6_0r52n")]
+position = Vector2(-200, -50)
 signal_name = &"lever_1_1"
 toggleable = true
-displacement = Vector2(0, 200)
-
-[node name="AnimatableBlock" parent="Environment/IntroDoor" instance=ExtResource("6_1vs2b")]
-
-[node name="AnimatableBlock2" parent="Environment/IntroDoor" instance=ExtResource("6_1vs2b")]
-position = Vector2(0, -100)
+displacement = Vector2(0, 300)
 
 [node name="LevelBounds" parent="Environment" instance=ExtResource("8_2in4v")]
 
