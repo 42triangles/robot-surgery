@@ -70,7 +70,7 @@ grow_vertical = 2
 color = Color(0.338021, 0.333309, 0.315211, 1)
 
 [node name="TubeBotLarge" type="AnimatableBody2D" parent="SubViewportContainer/SubViewport"]
-position = Vector2(576, 324)
+position = Vector2(576, 404)
 script = ExtResource("2_pgcfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/TubeBotLarge"]
@@ -100,7 +100,7 @@ position = Vector2(120, 0)
 shape = SubResource("WorldBoundaryShape2D_j487n")
 
 [node name="WADLSmall" type="RigidBody2D" parent="SubViewportContainer/SubViewport"]
-position = Vector2(576, 392)
+position = Vector2(576, 472)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/WADLSmall"]
 shape = SubResource("CircleShape2D_sv10p")
