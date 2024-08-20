@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dhmrdr8obqljr"]
+[gd_scene load_steps=16 format=4 uid="uid://dhmrdr8obqljr"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_ed270"]
 [ext_resource type="Texture2D" uid="uid://ngwbg6qhe5as" path="res://sprites/environment/background_02_v2.png" id="2_rwci2"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://wx8bj1rklpwo" path="res://scenes/player_tube_bot.tscn" id="5_8utv3"]
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="5_ofejn"]
 [ext_resource type="PackedScene" uid="uid://cn52d14tbhk4y" path="res://scenes/door.tscn" id="6_qftwq"]
+[ext_resource type="Script" path="res://scripts/win_area.gd" id="7_3g81w"]
+[ext_resource type="PackedScene" uid="uid://bm1uvemgod2tk" path="res://scenes/credits_menu.tscn" id="8_uoipx"]
 [ext_resource type="PackedScene" uid="uid://cqq1uhv7kjtcx" path="res://scenes/lever.tscn" id="9_uiba2"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xsu23"]
@@ -16,6 +18,9 @@ b = Vector2(100, 0)
 [sub_resource type="Gradient" id="Gradient_aa7at"]
 offsets = PackedFloat32Array(0, 0.338219, 1)
 colors = PackedColorArray(0.470076, 0.470076, 0.470076, 1, 0.88, 0.72512, 0.5896, 1, 0.558893, 0.525335, 0.495973, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnri1"]
+size = Vector2(300, 300)
 
 [sub_resource type="Gradient" id="Gradient_exr7v"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -76,6 +81,14 @@ gradient = SubResource("Gradient_aa7at")
 position = Vector2(550, -250)
 signal_name = &"button_0_1"
 displacement = Vector2(0, 300)
+
+[node name="WinArea" type="Area2D" parent="Environment"]
+position = Vector2(900, -250)
+script = ExtResource("7_3g81w")
+scene = ExtResource("8_uoipx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WinArea"]
+shape = SubResource("RectangleShape2D_mnri1")
 
 [node name="TubeBot" parent="." instance=ExtResource("5_8utv3")]
 position = Vector2(-600, -20)
