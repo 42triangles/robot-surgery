@@ -11,6 +11,8 @@ signal died(old_position: Vector2, new_position: Vector2)
 @export_custom(PROPERTY_HINT_NONE, "suffix:°") var move_tip: float = 0
 @export var checkpoint: Checkpoint
 @export var has_to_flip: Array[Node2D] = []
+@export var knockback: float = 1
+@export var knockback_min: float = 2000
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -49,7 +51,12 @@ func _process(delta: float) -> void:
 	
 	rotation_degrees = velocity.x / max_speed * move_tip
 	
-	move_and_slide()
+	var old_velocity = velocity.x
+	if move_and_slide():
+		if is_on_wall() and abs(velocity.x) < 0.01 and abs(old_velocity) > 0.01:
+			velocity.x = -knockback * old_velocity
+			if abs(velocity.x) < knockback_min:
+				velocity.x = sign(velocity.x) * knockback_min
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("move_left") or event.is_action("move_right"):
@@ -94,8 +101,11 @@ func die() -> void:
 	
 	global_position = checkpoint.global_position
 	velocity = Vector2.ZERO
-	rotation = 0
-	movement = 0
 	facing_left = checkpoint.facing_left
 	
+	for i in get_children():
+		if i is CustomRemoteTransform2D:
+			print(old_position, global_position)
+			i.recalculate_offset()
+
 	died.emit(old_position, global_position)

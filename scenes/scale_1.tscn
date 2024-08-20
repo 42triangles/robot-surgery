@@ -109,6 +109,4 @@ texture_scale = 8.0
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.188969, 0.188969, 0.188969, 1)
 
-[connection signal="died" from="TubeBot" to="TubeBot/CustomRemoteTransform2D" method="update_offset_by_parent"]
-
 [editable path="Environment/LevelBounds"]
