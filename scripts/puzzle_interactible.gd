@@ -5,8 +5,10 @@ class_name PuzzleInteractible extends Area2D
 @export var state: bool = false
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
 func interact() -> void:
+	audio.play()
 	if toggleable:
 		state = !state
 		if state == true:

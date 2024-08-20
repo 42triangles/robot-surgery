@@ -149,3 +149,5 @@ sprite_frames = SubResource("SpriteFrames_i1tlb")
 animation = &"activate"
 frame = 15
 frame_progress = 0.553333
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

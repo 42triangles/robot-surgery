@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cqq1uhv7kjtcx"]
+[gd_scene load_steps=36 format=3 uid="uid://cqq1uhv7kjtcx"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_interactible.gd" id="1_f8hny"]
 [ext_resource type="Texture2D" uid="uid://u1goimdc1b5e" path="res://sprites/lever/lever_angle_200px/lever_angle.0000.png" id="3_35s6j"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cdhflrkri8rhi" path="res://sprites/lever/lever_angle_200px/lever_angle.0027.png" id="30_2yi5d"]
 [ext_resource type="Texture2D" uid="uid://bv5gvnnsu4gq8" path="res://sprites/lever/lever_angle_200px/lever_angle.0028.png" id="31_anhq8"]
 [ext_resource type="Texture2D" uid="uid://d4l74mf3gg431" path="res://sprites/lever/lever_angle_200px/lever_angle.0029.png" id="32_krouu"]
+[ext_resource type="AudioStream" uid="uid://bjmp525g5mr5a" path="res://audio/sfx/lever.wav" id="33_0bxnf"]
 [ext_resource type="Texture2D" uid="uid://b0d1b5t143xup" path="res://sprites/lever/lever_angle_200px/lever_angle.0030.png" id="33_4re2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dmtr"]
@@ -148,3 +149,7 @@ shape = SubResource("RectangleShape2D_7dmtr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_525by")
 animation = &"activate"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_0bxnf")
+volume_db = -12.0
