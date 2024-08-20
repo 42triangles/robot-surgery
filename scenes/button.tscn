@@ -158,4 +158,3 @@ stream = ExtResource("33_jh4dr")
 volume_db = -15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
