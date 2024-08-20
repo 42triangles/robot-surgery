@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://dpaxlkqtm7uq5"]
+[gd_scene load_steps=10 format=4 uid="uid://dpaxlkqtm7uq5"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_2i8hn"]
 [ext_resource type="PackedScene" uid="uid://hbpgw80ffdmr" path="res://scenes/player_wadl.tscn" id="1_yixew"]
 [ext_resource type="Texture2D" uid="uid://btd816cg45ld" path="res://sprites/environment/background_01.png" id="2_o2uxq"]
 [ext_resource type="PackedScene" uid="uid://cqq1uhv7kjtcx" path="res://scenes/lever.tscn" id="4_1ii6s"]
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="4_11ug5"]
-[ext_resource type="PackedScene" uid="uid://nyairciy3dvb" path="res://scenes/button.tscn" id="5_skgjq"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="5_t5v1y"]
+[ext_resource type="PackedScene" uid="uid://so5gcdiiubfp" path="res://scenes/animatable_block.tscn" id="6_1vs2b"]
 
 [sub_resource type="Gradient" id="Gradient_dcy3c"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -37,15 +38,24 @@ tile_map_data = PackedByteArray("AAD7/wEAAwABAAAAAQD8/wEAAwABAAAAAAD9/wEAAwACAAA
 tile_set = ExtResource("4_11ug5")
 use_kinematic_bodies = true
 
-[node name="Lever" parent="Environment" instance=ExtResource("4_1ii6s")]
-position = Vector2(347, -41)
+[node name="Lever1" parent="Environment" instance=ExtResource("4_1ii6s")]
+position = Vector2(255, 41)
 signal_name = &"lever_1"
 
-[node name="Button" parent="Environment" instance=ExtResource("5_skgjq")]
-position = Vector2(90, 2)
+[node name="IntroDoor" type="Node2D" parent="Environment"]
+position = Vector2(-200, 50)
+script = ExtResource("5_t5v1y")
+signal_name = &"lever_1_1"
+toggleable = true
+displacement = Vector2(0, 200)
+
+[node name="AnimatableBlock" parent="Environment/IntroDoor" instance=ExtResource("6_1vs2b")]
+
+[node name="AnimatableBlock2" parent="Environment/IntroDoor" instance=ExtResource("6_1vs2b")]
+position = Vector2(0, -100)
 
 [node name="WADL" parent="." instance=ExtResource("1_yixew")]
-position = Vector2(0, -164)
+position = Vector2(-400, -4)
 
 [node name="Camera2D" type="Camera2D" parent="WADL"]
 position = Vector2(0, -80)

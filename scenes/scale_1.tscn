@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=4 uid="uid://dhmrdr8obqljr"]
+[gd_scene load_steps=12 format=4 uid="uid://dhmrdr8obqljr"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_ed270"]
 [ext_resource type="Texture2D" uid="uid://ngwbg6qhe5as" path="res://sprites/environment/background_02_v2.png" id="2_rwci2"]
 [ext_resource type="Script" path="res://scripts/custom_remote_transform_2d.gd" id="4_8tmn4"]
 [ext_resource type="PackedScene" uid="uid://ybx0aagjkb6r" path="res://scenes/launchpad.tscn" id="4_vi157"]
 [ext_resource type="PackedScene" uid="uid://wx8bj1rklpwo" path="res://scenes/player_tube_bot.tscn" id="5_8utv3"]
-[ext_resource type="Script" path="res://scripts/animatable_block.gd" id="5_jncu6"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="5_jncu6"]
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="5_ofejn"]
 [ext_resource type="PackedScene" uid="uid://so5gcdiiubfp" path="res://scenes/animatable_block.tscn" id="6_faqfv"]
+[ext_resource type="PackedScene" uid="uid://cqq1uhv7kjtcx" path="res://scenes/lever.tscn" id="9_uiba2"]
 
 [sub_resource type="Gradient" id="Gradient_exr7v"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -40,38 +41,24 @@ tile_set = ExtResource("5_ofejn")
 [node name="Launchpad" parent="Environment" instance=ExtResource("4_vi157")]
 position = Vector2(343, 52)
 
-[node name="IntroWalls" type="Node2D" parent="Environment"]
+[node name="Lever" parent="Environment" instance=ExtResource("9_uiba2")]
+position = Vector2(-150, 42)
+signal_name = &"lever_1_1"
+
+[node name="IntroDoor" type="Node2D" parent="Environment"]
 position = Vector2(0, 50)
-
-[node name="AnimatableBlock" parent="Environment/IntroWalls" instance=ExtResource("6_faqfv")]
-position = Vector2(-150, 0)
 script = ExtResource("5_jncu6")
 signal_name = &"lever_1"
 toggleable = true
-displacement = Vector2(0, -300)
+displacement = Vector2(0, 200)
 
-[node name="AnimatableBlock2" parent="Environment/IntroWalls" instance=ExtResource("6_faqfv")]
-position = Vector2(-150, -100)
-script = ExtResource("5_jncu6")
-signal_name = &"lever_1"
-toggleable = true
-displacement = Vector2(0, -300)
+[node name="AnimatableBlock" parent="Environment/IntroDoor" instance=ExtResource("6_faqfv")]
 
-[node name="AnimatableBlock3" parent="Environment/IntroWalls" instance=ExtResource("6_faqfv")]
-position = Vector2(150, 0)
-script = ExtResource("5_jncu6")
-signal_name = &"lever_1"
-toggleable = true
-displacement = Vector2(0, -300)
-
-[node name="AnimatableBlock4" parent="Environment/IntroWalls" instance=ExtResource("6_faqfv")]
-position = Vector2(150, -100)
-script = ExtResource("5_jncu6")
-signal_name = &"lever_1"
-toggleable = true
-displacement = Vector2(0, -300)
+[node name="AnimatableBlock2" parent="Environment/IntroDoor" instance=ExtResource("6_faqfv")]
+position = Vector2(0, -100)
 
 [node name="TubeBot" parent="." instance=ExtResource("5_8utv3")]
+position = Vector2(-300, -20)
 move_tip = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="TubeBot"]

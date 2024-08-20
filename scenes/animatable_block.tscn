@@ -6,6 +6,7 @@
 size = Vector2(100, 100)
 
 [node name="AnimatableBlock" type="AnimatableBody2D"]
+sync_to_physics = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fvobs")
