@@ -140,7 +140,6 @@ animations = [{
 
 [node name="Lever" type="Area2D" groups=["interactibles"]]
 script = ExtResource("1_f8hny")
-toggleable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 10)

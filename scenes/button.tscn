@@ -140,7 +140,6 @@ animations = [{
 
 [node name="Button" type="Area2D" groups=["interactibles"]]
 script = ExtResource("1_jwv5v")
-toggleable = true
 interact_on_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

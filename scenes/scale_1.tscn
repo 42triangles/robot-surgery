@@ -61,7 +61,6 @@ signal_name = &"lever_1_1"
 [node name="IntroDoor" parent="Environment" instance=ExtResource("6_qftwq")]
 position = Vector2(-350, -50)
 signal_name = &"lever_1"
-toggleable = true
 displacement = Vector2(0, 300)
 
 [node name="OneWayFloor" type="AnimatableBody2D" parent="Environment"]

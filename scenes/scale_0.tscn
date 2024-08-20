@@ -55,7 +55,6 @@ signal_name = &"lever_1"
 [node name="IntroDoor" parent="Environment" instance=ExtResource("6_0r52n")]
 position = Vector2(-200, -50)
 signal_name = &"lever_1_1"
-toggleable = true
 displacement = Vector2(0, 300)
 
 [node name="OneWayFloor" type="AnimatableBody2D" parent="Environment"]
@@ -74,7 +73,11 @@ gradient = SubResource("Gradient_w51v1")
 [node name="Button" parent="Environment" instance=ExtResource("7_403g8")]
 position = Vector2(668, -580)
 signal_name = &"button_0_1"
-toggleable = false
+one_time_use = true
+
+[node name="Button2" parent="Environment" instance=ExtResource("7_403g8")]
+position = Vector2(668, -580)
+signal_name = &"button_0_1"
 one_time_use = true
 
 [node name="WADL" parent="." instance=ExtResource("1_yixew")]
