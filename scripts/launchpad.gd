@@ -19,3 +19,5 @@ func _on_body_entered(body: Node2D) -> void:
 			body.velocity += velocity
 			sprite.play("activate")
 			cooldown_remaining = cooldown
+		if body is Box:
+			body.apply_central_force(velocity)

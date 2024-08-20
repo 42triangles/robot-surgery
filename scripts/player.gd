@@ -13,6 +13,7 @@ signal died(old_position: Vector2, new_position: Vector2)
 @export var has_to_flip: Array[Node2D] = []
 @export var knockback: float = 1
 @export var knockback_min: float = 2000
+@export var push_force: float = 500
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -37,7 +38,7 @@ func _ready() -> void:
 		checkpoint.facing_left = facing_left
 		get_parent().find_child("Environment").add_child(checkpoint)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	velocity += get_gravity()
 	
 	velocity.x += movement * movement_scale * (delta * 60)
@@ -52,7 +53,13 @@ func _process(delta: float) -> void:
 	rotation_degrees = velocity.x / max_speed * move_tip
 	
 	var old_velocity = velocity.x
-	if move_and_slide():
+	if move_and_slide(): # true if collided
+		# Pushing adapted from https://forum.godotengine.org/t/how-to-push-a-rigidbody2d-with-a-characterbody2d/2681/2
+		for i in get_slide_collision_count():
+			var col = get_slide_collision(i)
+			if col.get_collider() is RigidBody2D:
+				col.get_collider().apply_force(col.get_normal() * -push_force)
+
 		if is_on_wall() and abs(velocity.x) < 0.01 and abs(old_velocity) > 0.01:
 			velocity.x = -knockback * old_velocity
 			if abs(velocity.x) < knockback_min:

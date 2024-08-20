@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dhmrdr8obqljr"]
+[gd_scene load_steps=15 format=4 uid="uid://dhmrdr8obqljr"]
 
 [ext_resource type="Script" path="res://scripts/scale_layer.gd" id="1_ed270"]
 [ext_resource type="Texture2D" uid="uid://ngwbg6qhe5as" path="res://sprites/environment/background_02_v2.png" id="2_rwci2"]
@@ -8,6 +8,7 @@
 [ext_resource type="TileSet" uid="uid://dclyj7bjtpoa3" path="res://tilesets/environment.tres" id="5_ofejn"]
 [ext_resource type="PackedScene" uid="uid://cn52d14tbhk4y" path="res://scenes/door.tscn" id="6_qftwq"]
 [ext_resource type="PackedScene" uid="uid://cqq1uhv7kjtcx" path="res://scenes/lever.tscn" id="9_uiba2"]
+[ext_resource type="PackedScene" uid="uid://4nor0jp3kaxr" path="res://scenes/box.tscn" id="10_1j5m4"]
 [ext_resource type="PackedScene" uid="uid://bye2ivywbf558" path="res://scenes/level_bounds.tscn" id="10_8tql8"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xsu23"]
@@ -78,6 +79,9 @@ position = Vector2(-300, -20)
 
 [node name="CollisionShape2D" parent="Environment/LevelBounds" index="0"]
 position = Vector2(340, -248.5)
+
+[node name="Box" parent="Environment" instance=ExtResource("10_1j5m4")]
+position = Vector2(172, 25)
 
 [node name="TubeBot" parent="." instance=ExtResource("5_8utv3")]
 position = Vector2(-300, -20)
