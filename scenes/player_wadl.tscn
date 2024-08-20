@@ -621,3 +621,7 @@ script = ExtResource("141_3qg8k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_rgq02")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="InteractionArea"]
+
+[connection signal="interacting" from="InteractionArea" to="." method="_on_interaction_area_interacting"]

@@ -73,3 +73,6 @@ func _on_sprite_animation_finished() -> void:
 func _on_sprite_animation_looped() -> void:
 	if sprite.animation == "walk" and movement == 0:
 		sprite.play("default")
+
+func _on_interaction_area_interacting() -> void:
+	sprite.play("interact")
