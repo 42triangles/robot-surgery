@@ -26,10 +26,6 @@ func _ready() -> void:
 		sprite.frame = sprite.sprite_frames.get_frame_count("activate") - 1
 	else:
 		sprite.frame = 0
-	
-	if one_time_use:
-		if not sprite.animation_finished.is_connected(_auto_deactivate):
-			sprite.animation_finished.connect(_auto_deactivate)
 
 func _auto_deactivate() -> void:
 	sprite.play_backwards("activate")
@@ -37,4 +33,9 @@ func _auto_deactivate() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if interact_on_collision and body is Player:
+		interact()
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if interact_on_collision and body is Player and state:
 		interact()
