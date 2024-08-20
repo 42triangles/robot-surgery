@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://hbpgw80ffdmr"]
+[gd_scene load_steps=147 format=3 uid="uid://hbpgw80ffdmr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tv6h6"]
 [ext_resource type="Texture2D" uid="uid://dgvsa2b5r7t77" path="res://sprites/wadl/walk/Wadl_v4.0000.png" id="2_bxmv6"]
@@ -140,6 +140,7 @@
 [ext_resource type="AudioStream" uid="uid://cgl4qgnceqstj" path="res://audio/sfx/wadl_walk_2.wav" id="137_k36uq"]
 [ext_resource type="AudioStream" uid="uid://4pb6y21qaq8y" path="res://audio/sfx/wadl_walk_3.wav" id="138_4yqac"]
 [ext_resource type="AudioStream" uid="uid://b0exqryh61g1u" path="res://audio/sfx/wadl_walk_4.wav" id="139_wx8ui"]
+[ext_resource type="Script" path="res://scripts/interaction_area.gd" id="141_3qg8k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvp8o"]
 animations = [{
@@ -587,7 +588,10 @@ size = Vector2(95, 117)
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vu6p"]
 radius = 69.1158
 
-[node name="WADL" type="CharacterBody2D" groups=["players"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_rgq02"]
+radius = 60.0
+
+[node name="WADL" type="CharacterBody2D"]
 script = ExtResource("1_tv6h6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -610,3 +614,10 @@ shape = SubResource("RectangleShape2D_slchu")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(30, 31)
 shape = SubResource("CircleShape2D_2vu6p")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+position = Vector2(48, 32)
+script = ExtResource("141_3qg8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_rgq02")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://wx8bj1rklpwo"]
+[gd_scene load_steps=99 format=3 uid="uid://wx8bj1rklpwo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_hs5y5"]
 [ext_resource type="Script" path="res://scripts/wheel.gd" id="3_bhh3v"]
@@ -94,6 +94,7 @@
 [ext_resource type="Texture2D" uid="uid://e4oaxccyojqc" path="res://sprites/tube_bot/tube_bot_200px/jump/tube_bot_render.0030.png" id="59_1gsh3"]
 [ext_resource type="Texture2D" uid="uid://bvi0yba11j12r" path="res://sprites/tube_bot/tube_bot_200px/tube_bot_wheel.png" id="90_w66a8"]
 [ext_resource type="AudioStream" uid="uid://bkv0g8tw7x4rd" path="res://audio/sfx/tube_bot_walk.ogg" id="92_lpux4"]
+[ext_resource type="Script" path="res://scripts/interaction_area.gd" id="95_0qu1l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvp8o"]
 animations = [{
@@ -397,7 +398,10 @@ animations = [{
 radius = 70.0
 height = 180.0
 
-[node name="TubeBot" type="CharacterBody2D" groups=["players"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7516a"]
+radius = 64.0
+
+[node name="TubeBot" type="CharacterBody2D"]
 script = ExtResource("1_hs5y5")
 
 [node name="WalkAudio" type="AudioStreamPlayer" parent="."]
@@ -432,5 +436,12 @@ autoplay = "walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 31)
 shape = SubResource("CapsuleShape2D_mncx7")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+position = Vector2(48, 44)
+script = ExtResource("95_0qu1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_7516a")
 
 [connection signal="jumping" from="." to="JumpAudio" method="play"]

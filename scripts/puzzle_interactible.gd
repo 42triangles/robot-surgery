@@ -6,8 +6,6 @@ class_name PuzzleInteractible extends Area2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var active: bool = false
-
 func interact() -> void:
 	if toggleable:
 		state = !state
@@ -23,26 +21,10 @@ func interact() -> void:
 		PuzzleRelay.emit_signal(signal_name)
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
 	if toggleable and (state == true):
 		sprite.frame = sprite.sprite_frames.get_frame_count("activate") - 1
 	else:
 		sprite.frame = 0
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("players"):
-		active = true
-
-func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("players"):
-		active = false
-
-func _unhandled_input(event: InputEvent) -> void:
-	if active:
-		if event.is_action_pressed("interact"):
-			interact()
-			get_viewport().set_input_as_handled()
 
 func _auto_deactivate() -> void:
 	sprite.play_backwards("activate")

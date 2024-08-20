@@ -137,7 +137,7 @@ animations = [{
 "speed": 60.0
 }]
 
-[node name="Lever" type="Area2D"]
+[node name="Lever" type="Area2D" groups=["interactibles"]]
 script = ExtResource("1_f8hny")
 toggleable = true
 

@@ -137,7 +137,7 @@ animations = [{
 "speed": 60.0
 }]
 
-[node name="Button" type="Area2D"]
+[node name="Button" type="Area2D" groups=["interactibles"]]
 script = ExtResource("1_jwv5v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
