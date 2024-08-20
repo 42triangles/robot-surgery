@@ -9,11 +9,11 @@ extends Node2D
 var offset: Vector2
 
 func recalculate_offset() -> void:
-	offset = target.global_position - relative_scale * global_position
+	if is_instance_valid(target):
+		offset = target.global_position - relative_scale * global_position
 
 func _ready() -> void:
-	if is_instance_valid(target):
-		recalculate_offset()
+	recalculate_offset()
 
 func _process(_delta: float) -> void:
 	if is_instance_valid(target):

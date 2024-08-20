@@ -31,7 +31,7 @@ func _ready() -> void:
 	sprite.animation_looped.connect(_on_sprite_animation_looped)
 	sprite.animation_finished.connect(_on_sprite_animation_finished)
 	
-	if checkpoint == null:
+	if not is_instance_valid(checkpoint):
 		checkpoint = load("res://scenes/checkpoint.tscn").instantiate()
 		checkpoint.position = position
 		checkpoint.facing_left = facing_left
