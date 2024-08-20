@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dy12dwfpkvbry"]
+[gd_scene load_steps=18 format=3 uid="uid://dy12dwfpkvbry"]
 
 [ext_resource type="Script" path="res://scripts/load_scene_button.gd" id="1_ei7ey"]
 [ext_resource type="AudioStream" uid="uid://dvmjvmpn17d8n" path="res://audio/Byte-sized Menu 1.ogg" id="2_br3ir"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://3d60il3ri057" path="res://sprites/tube_bot/tube_bot_render.png" id="2_l627d"]
 [ext_resource type="Script" path="res://scripts/title_screen_wadl.gd" id="2_pgcfd"]
 [ext_resource type="Script" path="res://scripts/exit_button.gd" id="2_rdwek"]
+[ext_resource type="Texture2D" uid="uid://c2nbl5ay0h228" path="res://sprites/Inside_Job_Logo_noborder.png" id="4_6ivha"]
 
 [sub_resource type="Theme" id="Theme_tk3rk"]
 
@@ -35,8 +36,16 @@ normal = Vector2(-1, 0)
 [sub_resource type="CircleShape2D" id="CircleShape2D_sv10p"]
 radius = 50.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_6djty"]
-font_size = 100
+[sub_resource type="Gradient" id="Gradient_73p7w"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ewoqq"]
+gradient = SubResource("Gradient_73p7w")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
 
 [node name="TitleMenu" type="Control"]
 layout_mode = 3
@@ -70,7 +79,7 @@ grow_vertical = 2
 color = Color(0.338021, 0.333309, 0.315211, 1)
 
 [node name="TubeBotLarge" type="AnimatableBody2D" parent="SubViewportContainer/SubViewport"]
-position = Vector2(576, 404)
+position = Vector2(676, 404)
 script = ExtResource("2_pgcfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/TubeBotLarge"]
@@ -100,7 +109,7 @@ position = Vector2(120, 0)
 shape = SubResource("WorldBoundaryShape2D_j487n")
 
 [node name="WADLSmall" type="RigidBody2D" parent="SubViewportContainer/SubViewport"]
-position = Vector2(576, 472)
+position = Vector2(676, 472)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/WADLSmall"]
 shape = SubResource("CircleShape2D_sv10p")
@@ -115,21 +124,28 @@ offset_left = -1.0
 offset_right = 149.0
 offset_bottom = 98.0
 theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
-text = "Inside Job"
-label_settings = SubResource("LabelSettings_6djty")
+ratio = 1.4223
+stretch_mode = 1
 
-[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="LogoBG" type="TextureRect" parent="MarginContainer/VBoxContainer/AspectRatioContainer"]
 layout_mode = 2
+texture = SubResource("GradientTexture2D_ewoqq")
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("4_6ivha")
+expand_mode = 1
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
