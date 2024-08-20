@@ -107,8 +107,9 @@ relative_scale = 1.5
 
 [node name="PointLight2D" type="PointLight2D" parent="TubeBot"]
 position = Vector2(0, -62)
+energy = 1.5
 texture = SubResource("GradientTexture2D_nadfp")
-texture_scale = 8.0
+texture_scale = 6.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.372251, 0.372251, 0.372251, 1)
