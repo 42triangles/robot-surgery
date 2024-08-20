@@ -48,6 +48,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if interact_on_collision and state:
+	if interact_on_collision and not one_time_use and state:
 		if get_overlapping_bodies().all(func (x): return x is not Player and x is not Box):
 			actual_interact()

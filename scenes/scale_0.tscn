@@ -74,6 +74,7 @@ gradient = SubResource("Gradient_w51v1")
 [node name="Button" parent="Environment" instance=ExtResource("7_403g8")]
 position = Vector2(668, -580)
 signal_name = &"button_0_1"
+one_time_use = true
 
 [node name="WADL" parent="." instance=ExtResource("1_yixew")]
 position = Vector2(-750, -4)
