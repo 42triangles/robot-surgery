@@ -15,7 +15,7 @@ run/main_scene="res://scenes/title_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.709804, 0.709804, 0.709804, 1)
 boot_splash/image="res://sprites/Inside_Job_Logo.png"
-config/icon="res://icon.svg"
+config/icon="res://sprites/Inside_Job_Logo_Background.png"
 
 [autoload]
 
@@ -76,3 +76,4 @@ interact={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
