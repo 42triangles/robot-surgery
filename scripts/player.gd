@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+signal jumping
+
 @export var movement_scale: float = 100
 @export var friction: float = 50
 @export var max_speed: float = 600
@@ -56,6 +58,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			if sprite.animation == "jump":
 				sprite.stop()
 			sprite.play("jump")
+			jumping.emit()
 		get_viewport().set_input_as_handled()
 
 func _on_scale_layer_unfocused() -> void:
