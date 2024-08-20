@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm1uvemgod2tk"]
+[gd_scene load_steps=5 format=3 uid="uid://bm1uvemgod2tk"]
 
 [ext_resource type="Script" path="res://scripts/load_scene_button.gd" id="1_onhdp"]
 [ext_resource type="AudioStream" uid="uid://q827d8f7n5v6" path="res://audio/Byte-sized Menu 2.ogg" id="2_5rh1j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_itd71"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_h58c2"]
+font_size = 48
 
 [node name="CreditsMenu" type="Control"]
 layout_mode = 3
@@ -11,14 +17,89 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BackButton" type="Button" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.338021, 0.333309, 0.315211, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CenterContainer"]
+stream = ExtResource("2_5rh1j")
+autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="thatkindof Credit" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Team Organization, Code"
+label_settings = SubResource("LabelSettings_itd71")
+
+[node name="thatkindof Name" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "thatkindof"
+label_settings = SubResource("LabelSettings_itd71")
+horizontal_alignment = 2
+
+[node name="Serena Credit" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Project Management, Code, Music"
+label_settings = SubResource("LabelSettings_itd71")
+
+[node name="Serena Name" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Serena Maar"
+label_settings = SubResource("LabelSettings_itd71")
+horizontal_alignment = 2
+
+[node name="Selbesterwahr Credit" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Visual Art"
+label_settings = SubResource("LabelSettings_itd71")
+
+[node name="Selbesterwahr Name" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Selbesterwahr"
+label_settings = SubResource("LabelSettings_itd71")
+horizontal_alignment = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Thank you for playing!"
+label_settings = SubResource("LabelSettings_h58c2")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="BackButton" type="Button" parent="MarginContainer"]
+layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 40
 text = "  BACK  "
 script = ExtResource("1_onhdp")
 scene_path = "res://scenes/title_menu.tscn"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_5rh1j")
-autoplay = true
