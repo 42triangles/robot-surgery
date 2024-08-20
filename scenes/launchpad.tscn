@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://ybx0aagjkb6r"]
 
-[ext_resource type="Script" path="res://scenes/launchpad.gd" id="1_bm6g6"]
+[ext_resource type="Script" path="res://scripts/launchpad.gd" id="1_bm6g6"]
 [ext_resource type="Texture2D" uid="uid://dq1mkjryvnu51" path="res://sprites/jump_pad/angle_200px/jumppad.0001.png" id="3_tn7h7"]
 [ext_resource type="Texture2D" uid="uid://ddybjofyv2kp8" path="res://sprites/jump_pad/angle_200px/jumppad.0002.png" id="4_ofas6"]
 [ext_resource type="Texture2D" uid="uid://cw2x0q2epdfye" path="res://sprites/jump_pad/angle_200px/jumppad.0003.png" id="5_68aef"]
