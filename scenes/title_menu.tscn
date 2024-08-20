@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://dy12dwfpkvbry"]
 
-[ext_resource type="Texture2D" uid="uid://bp0fj52dhhmwe" path="res://sprites/tube_bot/tube_bot_200px/jump/tube_bot_render.0000.png" id="1_cdqf3"]
 [ext_resource type="Script" path="res://scripts/load_scene_button.gd" id="1_ei7ey"]
 [ext_resource type="AudioStream" uid="uid://dvmjvmpn17d8n" path="res://audio/Byte-sized Menu 1.ogg" id="2_br3ir"]
 [ext_resource type="Texture2D" uid="uid://dgvsa2b5r7t77" path="res://sprites/wadl/walk/Wadl_v4.0000.png" id="2_hn2qq"]
+[ext_resource type="Texture2D" uid="uid://3d60il3ri057" path="res://sprites/tube_bot/tube_bot_render.png" id="2_l627d"]
 [ext_resource type="Script" path="res://scripts/title_screen_wadl.gd" id="2_pgcfd"]
 [ext_resource type="Script" path="res://scripts/exit_button.gd" id="2_rdwek"]
 
@@ -74,9 +74,10 @@ position = Vector2(576, 324)
 script = ExtResource("2_pgcfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/TubeBotLarge"]
-position = Vector2(0, -424)
-scale = Vector2(12, 12)
-texture = ExtResource("1_cdqf3")
+position = Vector2(-50, -424)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_l627d")
+flip_h = true
 
 [node name="HoleSprite" type="Sprite2D" parent="SubViewportContainer/SubViewport/TubeBotLarge"]
 position = Vector2(0, 3.05176e-05)
@@ -124,7 +125,7 @@ theme_override_constants/separation = 40
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Title Goes Here"
+text = "Inside Job"
 label_settings = SubResource("LabelSettings_6djty")
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
