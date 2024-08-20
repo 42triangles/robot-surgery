@@ -72,7 +72,7 @@ width = 8.0
 gradient = SubResource("Gradient_w51v1")
 
 [node name="Button" parent="Environment" instance=ExtResource("7_403g8")]
-position = Vector2(550, -580)
+position = Vector2(668, -580)
 signal_name = &"button_0_1"
 
 [node name="WADL" parent="." instance=ExtResource("1_yixew")]

@@ -140,7 +140,8 @@ animations = [{
 
 [node name="Button" type="Area2D" groups=["interactibles"]]
 script = ExtResource("1_jwv5v")
-one_time_use = true
+toggleable = true
+interact_on_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 40)
@@ -155,3 +156,6 @@ frame_progress = 0.553333
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("33_jh4dr")
 volume_db = -15.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
