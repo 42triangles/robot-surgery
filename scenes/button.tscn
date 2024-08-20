@@ -140,6 +140,7 @@ animations = [{
 
 [node name="Button" type="Area2D" groups=["interactibles"]]
 script = ExtResource("1_jwv5v")
+one_time_use = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 40)

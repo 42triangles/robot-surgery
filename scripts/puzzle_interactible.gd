@@ -2,6 +2,7 @@ class_name PuzzleInteractible extends Area2D
 
 @export var signal_name: StringName
 @export var toggleable: bool
+@export var one_time_use: bool = false
 @export var state: bool = false
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -18,9 +19,12 @@ func interact() -> void:
 		PuzzleRelay.emit_signal(signal_name, state)
 	else:
 		sprite.play("activate")
-		if not sprite.animation_finished.is_connected(_auto_deactivate):
-			sprite.animation_finished.connect(_auto_deactivate)
+		if not one_time_use:
+			if not sprite.animation_finished.is_connected(_auto_deactivate):
+				sprite.animation_finished.connect(_auto_deactivate)
 		PuzzleRelay.emit_signal(signal_name)
+	if one_time_use:
+		remove_from_group("interactibles")
 
 func _ready() -> void:
 	if toggleable and (state == true):
