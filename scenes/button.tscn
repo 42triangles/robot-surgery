@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://nyairciy3dvb"]
+[gd_scene load_steps=36 format=3 uid="uid://nyairciy3dvb"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_interactible.gd" id="1_jwv5v"]
 [ext_resource type="Texture2D" uid="uid://dmaywphhu8203" path="res://sprites/button/button_angle_200px/button_angle.0000.png" id="2_24ttu"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bhv4alim3r3dn" path="res://sprites/button/button_angle_200px/button_angle.0028.png" id="30_jiac6"]
 [ext_resource type="Texture2D" uid="uid://b5a0kh0idpt4" path="res://sprites/button/button_angle_200px/button_angle.0029.png" id="31_p1rug"]
 [ext_resource type="Texture2D" uid="uid://4ypntnhv5qji" path="res://sprites/button/button_angle_200px/button_angle.0030.png" id="32_ubyfr"]
+[ext_resource type="AudioStream" uid="uid://37noslfrsaf5" path="res://audio/sfx/button.wav" id="33_jh4dr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dmtr"]
 size = Vector2(150, 100)
@@ -151,3 +152,5 @@ frame = 15
 frame_progress = 0.553333
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_jh4dr")
+volume_db = -15.0
