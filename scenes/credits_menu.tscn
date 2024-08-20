@@ -55,7 +55,7 @@ label_settings = SubResource("LabelSettings_itd71")
 
 [node name="thatkindof Name" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
-text = "thatkindof"
+text = "42triangles"
 label_settings = SubResource("LabelSettings_itd71")
 horizontal_alignment = 2
 
@@ -77,7 +77,18 @@ label_settings = SubResource("LabelSettings_itd71")
 
 [node name="Selbesterwahr Name" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
-text = "Selbesterwahr"
+text = "Gerhardt Reibstirn"
+label_settings = SubResource("LabelSettings_itd71")
+horizontal_alignment = 2
+
+[node name="Salty Credit" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Game Design"
+label_settings = SubResource("LabelSettings_itd71")
+
+[node name="Salty Name" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Salty"
 label_settings = SubResource("LabelSettings_itd71")
 horizontal_alignment = 2
 
