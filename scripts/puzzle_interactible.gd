@@ -47,7 +47,7 @@ func _auto_deactivate() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if interact_on_collision and (body is Player or body is Box):
+	if interact_on_collision and (not toggleable or not state) and (body is Player or body is Box):
 		actual_interact()
 
 
